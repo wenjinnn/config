@@ -1,0 +1,4 @@
+.git/
+workspace/
+package.json
+package-lock.json
