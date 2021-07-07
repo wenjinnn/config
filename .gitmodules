@@ -1,0 +1,6 @@
+[submodule "nvim/lua/lspconfig/java/vscode-java-test"]
+	path = nvim/lua/lspconfig/java/vscode-java-test
+	url = https://github.com/microsoft/vscode-java-test.git
+[submodule "nvim/lua/lspconfig/java/java-debug"]
+	path = nvim/lua/lspconfig/java/java-debug
+	url = https://github.com/microsoft/java-debug.git
