@@ -2,3 +2,6 @@
 workspace/
 package.json
 package-lock.json
+glow.tar.gz
+*.bak/
+*backup*/
