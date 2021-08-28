@@ -6,3 +6,4 @@ glow.tar.gz
 *.bak/
 *backup*/
 *.userdb/
+fcitx5/rime/build
