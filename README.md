@@ -10,9 +10,9 @@ To use `dotfiles/.tmux.conf.local`, [tmux](https://github.com/tmux/tmux) & [oh-m
 My neovim configuration. since neovim 0.5 version, lot plugins are not compatible with vim, so I completely separated vim and neovim configuration. 
 
 ### IM
-IM config
+Input method config
 
-### DDE
-DDE config backup
+### DE
+Desktop environment config backup
 
-**Note that the `/project/my/config` path in each readme file must be replaced with your own path**
+### Note that some directory have `readme.md` file, That's are some special operations and memos I recorded, the `/project/my/config` path in each readme file must be replaced with your own path
