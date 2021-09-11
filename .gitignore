@@ -7,3 +7,4 @@ glow.tar.gz
 *backup*/
 *.userdb/
 */rime/build
+*/__pycache__/
