@@ -15,4 +15,7 @@ Input method config
 ### DE
 Desktop environment config backup
 
+### ranger
+Ranger config, I use [rnvimr](https://github.com/kevinhwang91/rnvimr) as nvim file explorer now, It has some package needs to install first, see `ranger/readme.md`
+
 ### Note that some directory have `readme.md` file, That's are some special operations and memos I recorded, the `/project/my/config` path in each readme file must be replaced with your own path
