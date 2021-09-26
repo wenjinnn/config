@@ -4,3 +4,6 @@
 [submodule "nvim/lua/lsp/java/java-debug"]
 	path = nvim/lua/lsp/java/java-debug
 	url = https://github.com/microsoft/java-debug.git
+[submodule "nvim/lua/lsp/java/vscode-java-decompiler"]
+	path = nvim/lua/lsp/java/vscode-java-decompiler
+	url = https://github.com/dgileadi/vscode-java-decompiler.git
