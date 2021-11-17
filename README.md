@@ -15,6 +15,12 @@ Input method config
 ### DE
 Desktop environment config backup
 
+### alacritty
+[alacritty](https://github.com/alacritty/alacritty) config
+
+### kitty
+[kitty](https://github.com/kovidgoyal/kitty) config
+
 ### ranger
 Ranger config, I use [rnvimr](https://github.com/kevinhwang91/rnvimr) as nvim file explorer now, It has some package needs to install first, see `ranger/readme.md`
 
