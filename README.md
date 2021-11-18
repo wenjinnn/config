@@ -1,6 +1,8 @@
 # Personal config
 Used to management my personal configuration, If something here is helpful, You can also use any code you like from this repo.
 
+Some config in neovim and tmux needs to set patch font in your terminal emulator, recommand one of the [nerd font](https://github.com/ryanoasis/nerd-fonts)
+
 ## directory description
 ### dotfiles
 My home directory dotfiles. note that `.vimrc` is deprecated, I use neovim now.
