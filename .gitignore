@@ -8,3 +8,4 @@ glow.tar.gz
 *.userdb/
 */rime/build
 */__pycache__/
+tags
