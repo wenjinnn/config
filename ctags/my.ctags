@@ -2,10 +2,10 @@
 --exclude=.git
 --exclude=BUILD
 --exclude=.svn
---exclude=*/vendor/*
---exclude=*/node_modules/*
---exclude=*/target/*
---exclude=*/log/*
+--exclude=*vendor/*
+--exclude=*node_modules/*
+--exclude=*target/*
+--exclude=*log/*
 --exclude=\*.min.\*
 --exclude=\*.swp
 --exclude=\*.bak
