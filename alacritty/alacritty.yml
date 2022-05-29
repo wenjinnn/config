@@ -22,7 +22,6 @@ env:
   # check the local terminfo database and use `alacritty` if it is
   # available, otherwise `xterm-256color` is used.
   TERM: xterm-256color
-  WAYLAND_DISPLAY: ""
 
 window:
   opacity: 0.90
