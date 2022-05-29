@@ -21,7 +21,7 @@ env:
   # each instance of Alacritty. If it is not present, alacritty will
   # check the local terminfo database and use `alacritty` if it is
   # available, otherwise `xterm-256color` is used.
-  TERM: xterm-256color
+  TERM: tmux-256color
 
 window:
   opacity: 0.90
@@ -62,7 +62,7 @@ window:
   # Values for `decorations` (macOS only):
   #     - transparent: Title bar, transparent background and title bar buttons
   #     - buttonless: Title bar, transparent background and no title bar buttons
-  # decorations: none
+  # decorations: full
 
   # Startup Mode (changes require restart)
   #
@@ -77,6 +77,7 @@ window:
 
   # Window title
   title: Alacritty
+    
 
   # Allow terminal applications to change Alacritty's window title.
   #dynamic_title: true
