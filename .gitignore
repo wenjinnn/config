@@ -9,3 +9,4 @@ glow.tar.gz
 */rime/build
 */__pycache__/
 tags
+nvim/plugin/packer_compiled.lua
