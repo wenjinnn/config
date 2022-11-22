@@ -10,3 +10,4 @@ glow.tar.gz
 */__pycache__/
 tags
 nvim/plugin/packer_compiled.lua
+*.luarc.json
