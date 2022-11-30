@@ -25,7 +25,6 @@ env:
 
 window:
   opacity: 0.90
-  decorations_theme_variant: dark
   # Window dimensions (changes require restart)
   #
   # Number of lines/columns (not pixels) in the terminal. Both lines and columns
@@ -78,7 +77,7 @@ window:
   startup_mode: Maximized
 
   # Window title
-  title: Alacritty
+  # title: Alacritty
     
 
   # Allow terminal applications to change Alacritty's window title.
@@ -96,7 +95,7 @@ window:
   # Override the variant of the GTK theme/Wayland client side decorations.
   # Commonly supported values are `dark` and `light`. Set this to `None` to use
   # the default theme variant.
-  #decorations_theme_variant: None
+  decorations_theme_variant: None
 
 #scrolling:
   # Maximum number of lines in the scrollback buffer.
@@ -156,7 +155,7 @@ font:
     #style: Bold Italic
 
   # Point size
-  size: 11.5
+  size: 11.0
 
   # Offset is the extra space around each character. `offset.y` can be thought
   # of as modifying the line spacing, and `offset.x` as modifying the letter
