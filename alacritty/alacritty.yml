@@ -25,11 +25,13 @@ env:
 
 window:
   opacity: 0.90
+  decorations_theme_variant: dark
   # Window dimensions (changes require restart)
   #
-  # Number of lines/columns (not pixels) in the terminal. The number of columns
-  # must be at least `2`, while using a value of `0` for columns and lines will
-  # fall back to the window manager's recommended size.
+  # Number of lines/columns (not pixels) in the terminal. Both lines and columns
+  # must be non-zero for this to take effect. The number of columns must be at
+  # least `2`, while using a value of `0` for columns and lines will fall back
+  # to the window manager's recommended size
   #dimensions:
   #  columns: 0
   #  lines: 0
@@ -62,7 +64,7 @@ window:
   # Values for `decorations` (macOS only):
   #     - transparent: Title bar, transparent background and title bar buttons
   #     - buttonless: Title bar, transparent background and no title bar buttons
-  # decorations: full
+  decorations: none
 
   # Startup Mode (changes require restart)
   #
@@ -80,7 +82,7 @@ window:
     
 
   # Allow terminal applications to change Alacritty's window title.
-  #dynamic_title: true
+  dynamic_title: true
 
   # Window class (Linux/BSD only):
   class:
@@ -89,11 +91,12 @@ window:
     # General application class
     general: Alacritty
 
-  # GTK theme variant (Linux/BSD only)
+  # Decorations theme variant (Linux/BSD only)
   #
-  # Override the variant of the GTK theme. Commonly supported values are `dark`
-  # and `light`. Set this to `None` to use the default theme variant.
-  gtk_theme_variant: dark
+  # Override the variant of the GTK theme/Wayland client side decorations.
+  # Commonly supported values are `dark` and `light`. Set this to `None` to use
+  # the default theme variant.
+  #decorations_theme_variant: None
 
 #scrolling:
   # Maximum number of lines in the scrollback buffer.
@@ -153,7 +156,7 @@ font:
     #style: Bold Italic
 
   # Point size
-  # size: 12.0
+  size: 11.5
 
   # Offset is the extra space around each character. `offset.y` can be thought
   # of as modifying the line spacing, and `offset.x` as modifying the letter
@@ -169,11 +172,12 @@ font:
   #  x: 0
   #  y: 0
 
-  # Thin stroke font rendering (macOS only)
+  # Use built-in font for box drawing characters.
   #
-  # Thin strokes are suitable for retina displays, but for non-retina screens
-  # it is recommended to set `use_thin_strokes` to `false`.
-  #use_thin_strokes: true
+  # If `true`, Alacritty will use a custom built-in font for box drawing
+  # characters (Unicode points 2500 - 259f).
+  #
+  #builtin_box_drawing: true
 
 # If `true`, bold text is drawn using the bright color variants.
 #draw_bold_text_with_bright_colors: false
@@ -199,34 +203,34 @@ font:
 #     cyan:       '#56b6c2'
 #     white:      '#828997' # mono-2
 # Colors (One Dark Pro from VSCode)
-colors:
-  primary:
-    background: '#23272e'
-    foreground: '#abb2bf'
-  cursor:
-    text:       CellBackground
-    cursor:     '#528bff' # syntax-cursor-color
-  selection:
-    text:       CellForeground
-    background: '#3e4451' # syntax-selection-color
-  normal:
-    black:      '#3f4451' # mono-3
-    red:        '#e05561' # red 1
-    green:      '#8cc265'
-    yellow:     '#d18f52' # orange 2
-    blue:       '#4aa5f0'
-    magenta:    '#c162de'
-    cyan:       '#42b3c2'
-    white:      '#e6e6e6' # mono-2
-  bright:
-   black:   '#4f5666'
-   red:     '#ff616e'
-   green:   '#a5e075'
-   yellow:  '#f0a45d'
-   blue:    '#4dc4ff'
-   magenta: '#de73ff'
-   cyan:    '#4dc1e0'
-   white:   '#d7dae0'
+# colors:
+#   primary:
+#     background: '#23272e'
+#     foreground: '#abb2bf'
+#   cursor:
+#     text:       CellBackground
+#     cursor:     '#528bff' # syntax-cursor-color
+#   selection:
+#     text:       CellForeground
+#     background: '#3e4451' # syntax-selection-color
+#   normal:
+#     black:      '#3f4451' # mono-3
+#     red:        '#e05561' # red 1
+#     green:      '#8cc265'
+#     yellow:     '#d18f52' # orange 2
+#     blue:       '#4aa5f0'
+#     magenta:    '#c162de'
+#     cyan:       '#42b3c2'
+#     white:      '#e6e6e6' # mono-2
+#   bright:
+#    black:   '#4f5666'
+#    red:     '#ff616e'
+#    green:   '#a5e075'
+#    yellow:  '#f0a45d'
+#    blue:    '#4dc4ff'
+#    magenta: '#de73ff'
+#    cyan:    '#4dc1e0'
+#    white:   '#d7dae0'
 # Colors (One Dark - https://github.com/atom/atom/tree/master/packages/one-dark-syntax)
 # colors:
 #   primary:
@@ -247,6 +251,41 @@ colors:
 #     magenta:    '#c678dd'
 #     cyan:       '#56b6c2'
 #     white:      '#828997' # mono-2
+# VSCode's integrated terminal default colors
+# Primary and dimmed colors needed
+
+colors:
+  # Default colors
+  primary:
+    background: '#1e1e1e' #Background from Dark Theme
+    foreground: '#cccccc'
+
+  # Selection colors
+  selection:
+    text: CellForeground
+    background: '#565656'
+
+  # Normal colors
+  normal:
+    black:   '#000000'
+    red:     '#cd3131'
+    green:   '#0dbc79'
+    yellow:  '#e5e510'
+    blue:    '#2472c8'
+    magenta: '#bc3fbc'
+    cyan:    '#11a8cd'
+    white:   '#e5e5e5'
+
+  # Bright colors
+  bright:
+    black:   '#666666'
+    red:     '#f14c4c'
+    green:   '#23d18b'
+    yellow:  '#f5f543'
+    blue:    '#3b8eea'
+    magenta: '#d670d6'
+    cyan:    '#29b8db'
+    white:   '#e5e5e5'
 # Colors (Tomorrow Night)
 #colors:
   # Default colors
@@ -300,7 +339,7 @@ colors:
     #  background: '#c5c8c6'
     #  foreground: '#1d1f21'
 
-  # Keyboard regex hints
+  # Keyboard hints
   #hints:
     # First character in the hint label
     #
@@ -327,6 +366,15 @@ colors:
   #line_indicator:
   #  foreground: None
   #  background: None
+
+  # Footer bar
+  #
+  # Color used for the footer bar on the bottom, used by search regex input,
+  # hyperlink URI preview, etc.
+  #
+  #footer_bar:
+  #  background: '#c5c8c6'
+  #  foreground: '#1d1f21'
 
   # Selection colors
   #
@@ -383,6 +431,13 @@ colors:
   #   `- { index: 16, color: '#ff00ff' }`
   #
   #indexed_colors: []
+
+  # Transparent cell backgrounds
+  #
+  # Whether or not `window.opacity` applies to all cell backgrounds or only to
+  # the default background. When set to `true` all cells will be transparent
+  # regardless of their background color.
+  #transparent_background_colors: false
 
 # Bell
 #
@@ -470,6 +525,11 @@ colors:
   # Cursor blinking interval in milliseconds.
   #blink_interval: 750
 
+  # Time after which cursor stops blinking, in seconds.
+  #
+  # Specifying '0' will disable timeout for blinking.
+  #blink_timeout: 5
+
   # If this is `true`, the cursor will be rendered as a hollow box when the
   # window is not focused.
   #unfocused_hollow: true
@@ -505,6 +565,9 @@ live_config_reload: true
 # Send ESC (\x1b) before characters when alt is pressed.
 #alt_send_esc: true
 
+# Offer IPC using `alacritty msg` (unix only)
+#ipc_socket: true
+
 #mouse:
   # Click settings
   #
@@ -517,18 +580,22 @@ live_config_reload: true
   # If this is `true`, the cursor is temporarily hidden when typing.
   #hide_when_typing: false
 
-# Regex hints
+# Hints
 #
-# Terminal hints can be used to find text in the visible part of the terminal
-# and pipe it to other applications.
+# Terminal hints can be used to find text or hyperlink in the visible part of
+# the terminal and pipe it to other applications.
 #hints:
   # Keys used for the hint labels.
   #alphabet: "jfkdls;ahgurieowpq"
 
   # List with all available hints
   #
-  # Each hint must have a `regex` and either an `action` or a `command` field.
-  # The fields `mouse`, `binding` and `post_processing` are optional.
+  # Each hint must have any of `regex` or `hyperlinks` field and either an
+  # `action` or a `command` field. The fields `mouse`, `binding` and
+  # `post_processing` are optional.
+  #
+  # The `hyperlinks` option will cause OSC 8 escape sequence hyperlinks to be
+  # highlighted.
   #
   # The fields `command`, `binding.key`, `binding.mods`, `binding.mode` and
   # `mouse.mods` accept the same values as they do in the `key_bindings` section.
@@ -538,7 +605,8 @@ live_config_reload: true
   #
   # If the `post_processing` field is set to `true`, heuristics will be used to
   # shorten the match if there are characters likely not to be part of the hint
-  # (e.g. a trailing `.`). This is most useful for URIs.
+  # (e.g. a trailing `.`). This is most useful for URIs and applies only to
+  # `regex` matches.
   #
   # Values for `action`:
   #   - Copy
@@ -552,6 +620,7 @@ live_config_reload: true
   #enabled:
   # - regex: "(ipfs:|ipns:|magnet:|mailto:|gemini:|gopher:|https:|http:|news:|file:|git:|ssh:|ftp:)\
   #           [^\u0000-\u001F\u007F-\u009F<>\"\\s{-}\\^⟨⟩`]+"
+  #   hyperlinks: true
   #   command: xdg-open
   #   post_processing: true
   #   mouse:
@@ -579,13 +648,20 @@ live_config_reload: true
 #   - Right
 #   - Numeric identifier such as `5`
 #
-# - `action` (see key bindings)
+# - `action` (see key bindings for actions not exclusive to mouse mode)
+#
+# - Mouse exclusive actions:
+#
+#   - ExpandSelection
+#       Expand the selection to the current mouse cursor location.
 #
 # And optionally:
 #
 # - `mods` (see key bindings)
 #mouse_bindings:
-#  - { mouse: Middle, action: PasteSelection }
+#  - { mouse: Right,                 action: ExpandSelection }
+#  - { mouse: Right,  mods: Control, action: ExpandSelection }
+#  - { mouse: Middle, mode: ~Vi,     action: PasteSelection  }
 
 # Key bindings
 #
@@ -654,6 +730,8 @@ live_config_reload: true
 #   - ToggleFullscreen
 #   - SpawnNewInstance
 #       Spawn a new instance of Alacritty.
+#   - CreateNewWindow
+#       Create a new Alacritty window from the current process.
 #   - ClearLogNotice
 #       Clear Alacritty's UI warning and error notice.
 #   - ClearSelection
@@ -671,6 +749,8 @@ live_config_reload: true
 #   - ToggleBlockSelection
 #   - ToggleSemanticSelection
 #       Toggle semantic selection based on `selection.semantic_escape_chars`.
+#   - CenterAroundViCursor
+#       Center view around vi mode cursor
 #
 # - Vi mode exclusive cursor motion actions:
 #
@@ -796,9 +876,9 @@ live_config_reload: true
   #- { key: Copy,                                        action: Copy           }
   #- { key: L,         mods: Control,                    action: ClearLogNotice }
   #- { key: L,         mods: Control, mode: ~Vi|~Search, chars: "\x0c"          }
-  #- { key: PageUp,    mods: Shift,   mode: ~Alt,        action: ScrollPageUp,  }
+  #- { key: PageUp,    mods: Shift,   mode: ~Alt,        action: ScrollPageUp   }
   #- { key: PageDown,  mods: Shift,   mode: ~Alt,        action: ScrollPageDown }
-  #- { key: Home,      mods: Shift,   mode: ~Alt,        action: ScrollToTop,   }
+  #- { key: Home,      mods: Shift,   mode: ~Alt,        action: ScrollToTop    }
   #- { key: End,       mods: Shift,   mode: ~Alt,        action: ScrollToBottom }
 
   # Vi Mode
@@ -824,6 +904,7 @@ live_config_reload: true
   #- { key: V,      mods: Control,       mode: Vi|~Search, action: ToggleBlockSelection    }
   #- { key: V,      mods: Alt,           mode: Vi|~Search, action: ToggleSemanticSelection }
   #- { key: Return,                      mode: Vi|~Search, action: Open                    }
+  #- { key: Z,                           mode: Vi|~Search, action: CenterAroundViCursor    }
   #- { key: K,                           mode: Vi|~Search, action: Up                      }
   #- { key: J,                           mode: Vi|~Search, action: Down                    }
   #- { key: H,                           mode: Vi|~Search, action: Left                    }
@@ -922,3 +1003,6 @@ live_config_reload: true
 
   # Print all received window events.
   #print_events: false
+
+  # Highlight window damage information.
+  #highlight_damage: false
