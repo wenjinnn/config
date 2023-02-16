@@ -870,9 +870,9 @@ live_config_reload: true
 #
 # If the same trigger is assigned to multiple actions, all of them are executed
 # in the order they were defined in.
-#key_bindings:
-  #- { key: Paste,                                       action: Paste          }
-  #- { key: Copy,                                        action: Copy           }
+key_bindings:
+  - { key: Paste,                                       action: Paste          }
+  - { key: Copy,                                        action: Copy           }
   #- { key: L,         mods: Control,                    action: ClearLogNotice }
   #- { key: L,         mods: Control, mode: ~Vi|~Search, chars: "\x0c"          }
   #- { key: PageUp,    mods: Shift,   mode: ~Alt,        action: ScrollPageUp   }
