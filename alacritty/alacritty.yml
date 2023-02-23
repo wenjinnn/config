@@ -115,7 +115,8 @@ font:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    family: FiraCode Nerd Font Mono
+    # family: FiraCode Nerd Font Mono
+    family: CaskaydiaCove Nerd Font Mono Semilight
     # family: MesloLGS Nerd Font
 
     # The `style` can be specified to pick a specific face.
