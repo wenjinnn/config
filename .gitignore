@@ -10,4 +10,5 @@ glow.tar.gz
 */__pycache__/
 tags
 nvim/plugin/packer_compiled.lua
+nvim/lazy-lock.json
 *.luarc.json
