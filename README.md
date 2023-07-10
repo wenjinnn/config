@@ -24,6 +24,9 @@ Desktop environment config backup
 [alacritty](https://github.com/alacritty/alacritty) config
 
 ### ranger
-Ranger config, I use [rnvimr](https://github.com/kevinhwang91/rnvimr) as nvim file explorer now, It has some package needs to install first, see `ranger/readme.md`
+The [ranger](https://github.com/ranger/ranger) TUI file manager config
 
-### Note that some directory have `readme.md` file, That's some special operations and memos I recorded, the `/project/my/config` path in each readme file must be replace with your own path
+### ctags
+[ctag](https://ctags.io/) config
+
+### Note that some directory have `readme.md`, That's some special operations and memos I recorded, the `/project/my/config` path in each readme file must be replace with your own path
