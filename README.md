@@ -11,7 +11,7 @@ NOTE: I'm a Arch Linux user, so I upgrade my system almost everyday. If somethin
 My home directory dotfiles. note that `.vimrc` is deprecated, I use neovim now.
 To use `dotfiles/.tmux.conf.local`, [tmux](https://github.com/tmux/tmux) & [oh-my-tmux](https://github.com/gpakosz/.tmux) needs to install first. 
 
-### nvim
+### .config/nvim
 My neovim configuration. since neovim 0.5 version, lot plugins are not compatible with vim, so I completely separated vim and neovim configuration. 
 
 ### IM
@@ -20,13 +20,13 @@ Input method config
 ### DE
 Desktop environment config backup
 
-### alacritty
+### .config/alacritty
 [alacritty](https://github.com/alacritty/alacritty) config
 
-### ranger
+### .config/ranger
 The [ranger](https://github.com/ranger/ranger) TUI file manager config
 
-### ctags
+### .config/ctags
 [ctag](https://ctags.io/) config
 
 ### Note that some directory have `readme.md`, That's some special operations and memos I recorded, the `/project/my/config` path in each readme file must be replace with your own path
