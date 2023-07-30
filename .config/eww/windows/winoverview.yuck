@@ -17,7 +17,7 @@
           margin-left: ${ws-window.at[0] * OVERVIEW_SCALE}px;
           margin-top: ${ws-window.at[1] * OVERVIEW_SCALE}px;
           margin-right: -${(ws-window.at[0] + ws-window.size[0]) * OVERVIEW_SCALE}px;
-          margin-bottom: ${RES_HEIGHT * OVERVIEW_SCALE - ((ws-window.at[1] + ws-window.size[1]) * OVERVIEW_SCALE)};
+          margin-bottom: ${RES_HEIGHT / 2 * OVERVIEW_SCALE - ((ws-window.at[1] + ws-window.size[1]) * OVERVIEW_SCALE)};
           "
           (eventbox
             :onrightclick "scripts/selectwindow ${ws-window.address} '${EWW_CMD}' ${ws-window.workspace.id}"
