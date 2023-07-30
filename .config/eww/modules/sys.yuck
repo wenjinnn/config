@@ -267,7 +267,7 @@
       )
       (revealer
         :transition "slideright"
-        :reveal "${sys_rev || force_sys_rev || memory.percentage + memory.swappercentage >= 120}"
+        :reveal "${sys_rev || force_sys_rev || EWW_RAM.used_mem_perc >= 80}"
         :duration "300ms"
         :class "sys-menu"
         :onclick "${EWW_CMD} update popup='system-menu'"
@@ -333,10 +333,10 @@
       (label :class "mem-menu-left" :text ""
         :style "${colormode == 'one' ? ('color: ' + coloraccent + ';') : ''}"
       )
-      (label :class "mem-menu-left" :text "${memory.used}"
+      (label :class "mem-menu-left" :text "${round(EWW_RAM.used_mem_perc,0)}"
         :style "${colormode == 'one' ? ('color: ' + coloraccent + ';') : ''}"
       )
-      (label :class "mem-menu-mid" :text ""
+      (label :class "mem-menu-mid" :text "%"
         :style "${colormode == 'one' ? ('color: ' + coloraccent + ';') : ''}"
       )
       (label :class "mem-menu-right" :text "${memory.swapused}"
