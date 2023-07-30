@@ -15,4 +15,6 @@ dotfiles/.tmux/resurrect
 dotfiles/.tmux/plugins
 nvim/plugin/packer_compiled.lua
 .config/nvim/lazy-lock.json
+.config/eww/tmp
+.config/vlc/vlc-qt-interface.conf
 *.luarc.json
