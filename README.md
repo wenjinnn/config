@@ -1,5 +1,5 @@
 # Personal config
-![screenshot](./screenshot_2023-03-20_22-20-04.png)
+![screenshot](./screenshot.png)
 Use to management my personal configuration, If something here is helpful, You can also use any code you like from this repo.
 
 Some config in neovim and tmux needs to set patch font in your terminal emulator, recommand one of the [nerd font](https://github.com/ryanoasis/nerd-fonts)
