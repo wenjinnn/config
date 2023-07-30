@@ -5,7 +5,7 @@ package-lock.json
 glow.tar.gz
 *.bak/
 *backup*/
-*/cache/
+**/cache/
 *.userdb/
 */rime/build
 **/__pycache__/
