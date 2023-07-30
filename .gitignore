@@ -14,5 +14,5 @@ tags
 dotfiles/.tmux/resurrect
 dotfiles/.tmux/plugins
 nvim/plugin/packer_compiled.lua
-nvim/lazy-lock.json
+.config/nvim/lazy-lock.json
 *.luarc.json
