@@ -52,7 +52,7 @@ PreeditEnabledByDefault=True
 # 切换输入法时显示输入法信息
 ShowInputMethodInformation=True
 # 在焦点更改时显示输入法信息
-showInputMethodInformationWhenFocusIn=False
+showInputMethodInformationWhenFocusIn=True
 # 显示紧凑的输入法信息
 CompactInputMethodInformation=True
 # 显示第一个输入法的信息
