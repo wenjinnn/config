@@ -11,7 +11,7 @@ EnumerateBackwardKeys=
 EnumerateSkipFirst=False
 
 [Hotkey/TriggerKeys]
-0=Super+space
+0=Control+Alt+space
 1=Zenkaku_Hankaku
 2=Hangul
 
