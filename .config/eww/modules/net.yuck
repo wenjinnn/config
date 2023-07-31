@@ -3,8 +3,8 @@
     :class "module"
     (eventbox
       :class "net-icon"
-      :onclick "kitty nmtui &"
-      :onrightclick "gnome-control-center network &"
+      :onclick "XDG_CURRENT_DESKTOP=GNOME gnome-control-center wifi &"
+      :onrightclick "XDG_CURRENT_DESKTOP=GNOME gnome-control-center network &"
       :tooltip {net.essid}
       ; :style "color: ${net.color};"
       (label
