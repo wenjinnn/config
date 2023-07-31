@@ -130,7 +130,7 @@
               (button
                 :class "wifi-arrow-btn"
                 :style "font-family: Material Symbols Rounded;"
-                :onclick "scripts/toggle-onotify.sh --close && kitty nmtui &"
+                :onclick "scripts/toggle-onotify.sh --close && XDG_CURRENT_DESKTOP=GNOME gnome-control-center wifi &"
                 ""
               )
             )
