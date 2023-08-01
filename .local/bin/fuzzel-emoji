@@ -1,9 +1,9 @@
 #!/bin/bash
 if [ $? -eq 0 ]
 then
-    sed '1,/^### DATA ###$/d' $0 | fuzzel --no-fuzzy --icon-theme=candy-icons --background-color=1A1513dd --text-color=F8D4D2ff --match-color=FFB3B1ff --border-width=2 --border-radius=15 --border-color=EB8A89ff	 --selection-color=585b70ff --selection-text-color=F8D4D2ff --selection-match-color=FFB3B1ff --font="Lexend"  --prompt=">>  " --dmenu | cut -d ' ' -f 1 | tr -d '\n' | wtype -
+    sed '1,/^### DATA ###$/d' $0 | fuzzel --no-fuzzy --background-color=1A1513dd --text-color=F8D4D2ff --match-color=FFB3B1ff --border-width=3 --border-radius=15 --border-color=EB8A89ff	 --selection-color=585b70ff --selection-text-color=F8D4D2ff --selection-match-color=FFB3B1ff --font="Lexend"  --prompt=">>  " --dmenu | cut -d ' ' -f 1 | tr -d '\n' | wtype -
 else
-    sed '1,/^### DATA ###$/d' $0 | fuzzel --no-fuzzy --icon-theme=candy-icons --background-color=1A1513dd --text-color=F8D4D2ff --match-color=FFB3B1ff --border-width=2 --border-radius=15 --border-color=EB8A89ff	 --selection-color=585b70ff --selection-text-color=F8D4D2ff --selection-match-color=FFB3B1ff --font="Lexend"  --prompt=">>  " --dmenu | cut -d ' ' -f 1 | tr -d '\n' | wl-copy
+    sed '1,/^### DATA ###$/d' $0 | fuzzel --no-fuzzy --background-color=1A1513dd --text-color=F8D4D2ff --match-color=FFB3B1ff --border-width=3 --border-radius=15 --border-color=EB8A89ff	 --selection-color=585b70ff --selection-text-color=F8D4D2ff --selection-match-color=FFB3B1ff --font="Lexend"  --prompt=">>  " --dmenu | cut -d ' ' -f 1 | tr -d '\n' | wl-copy
 fi
 exit
 ### DATA ###
