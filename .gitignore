@@ -6,13 +6,11 @@ glow.tar.gz
 *.bak/
 *backup*/
 **/cache/
-*.userdb/
-*/rime/build
+**/*.userdb/
+**/rime/build
 **/__pycache__/
 *.so
 tags
-dotfiles/.tmux/resurrect
-dotfiles/.tmux/plugins
 nvim/plugin/packer_compiled.lua
 .config/nvim/lazy-lock.json
 .config/eww/tmp
