@@ -4,3 +4,6 @@
 [submodule ".config/nvim/lua/lsp/jdtls/vscode-java-decompiler"]
 	path = .config/nvim/lua/lsp/jdtls/vscode-java-decompiler
 	url = https://github.com/dgileadi/vscode-java-decompiler.git
+[submodule ".tmux"]
+	path = .tmux
+	url = https://github.com/gpakosz/.tmux.git
