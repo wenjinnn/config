@@ -8,6 +8,8 @@ Some config in neovim and tmux needs to set patch font in your terminal emulator
 
 NOTE: I'm a Arch Linux user, so I upgrade my system almost everyday. If something here not working well for you, you should try the nightly version, or just join Arch Linux :).
 
+Also I had optimize this repo size recently by using [git-filter-repo](https://github.com/newren/git-filter-repo/), so is ok that if you see commits in here have much less then before, that's ok, nothing is lost, just changed direction.
+
 ## Some directory that I really speed lot time
 
 ### .config/nvim
