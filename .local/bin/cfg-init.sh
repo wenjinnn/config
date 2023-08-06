@@ -2,7 +2,6 @@ git clone --bare https://github.com/hewenjin/config.git $HOME/.cfg
 function cfg {
    /usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME $@
 }
-mkdir -p .config-backup
 cfg checkout
 if [ $? = 0 ]; then
   echo "Checked out config.";
