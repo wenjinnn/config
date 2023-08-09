@@ -15,5 +15,6 @@ nvim/plugin/packer_compiled.lua
 .config/nvim/lazy-lock.json
 .config/eww/tmp
 .config/mpv/history.log
+.config/mpv/bookmarker.json
 .config/vlc/vlc-qt-interface.conf
 *.luarc.json
