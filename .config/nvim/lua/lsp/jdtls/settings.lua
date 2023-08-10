@@ -50,7 +50,7 @@ local M = {
     },
     maxConcurrentBuilds = 5,
     saveActions = {
-      organizeImports = true,
+      organizeImports = false,
     },
     trace = {
       server = "verbose"
