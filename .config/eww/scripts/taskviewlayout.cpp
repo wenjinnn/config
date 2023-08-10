@@ -14,8 +14,8 @@ using namespace std;
 using json = nlohmann::json;
 
 #define COLS 10
-#define RES_WIDTH 3840
-#define RES_HEIGHT 2400
+#define RES_WIDTH 1920
+#define RES_HEIGHT 1080
 #define RESERVED_BOTTOM 250
 #define SPACING 30
 #define TITLEBAR_AND_BORDER_HEIGHT 51
@@ -55,7 +55,6 @@ void initWorkspaces() {
 }
 
 void addApp(json& client) {
-    if(string(client["class"]).size() == 0) return;
     // Calculate position in overview tile
     int workspaceNum = int(client["workspace"]["id"]) - 1;  // 1-base to 0-base
     if (workspaceNum < 0)
