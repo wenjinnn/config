@@ -41,30 +41,30 @@
             :class "bar-batt-chargestate${battery.quickicon == '' ? '' : (battery.percentage <= BATTERY_LOW ? '-charging-low' : '-charging')}"
           )
         )
-        (box ; Icons
-          :space-evenly false :spacing 10
-          :orientation "h"
-          :class "bar-pad-horiz-moreright"
-          (box
-            :valign "center"
-            :orientation "v"
-            :space-evenly false :spacing -4
-            (label :class "icon-material bar-system-icon txt-norm txt"
-              :text "keyboard"
-            )
-            (label :class "txt-tiny txt" :text {lang_ibus.name_abbr})
-          )
-          ; (label
-            ;   :valign "center"
-            ;   :class "icon-material bar-system-icon txt-norm"
-            ;   :text {WIFI_ICONS[net.level]}
-          ; )
-          ; (label
-            ;   :valign "center"
-            ;   :class "icon-material bar-system-icon txt-norm"
-            ;   :text {bluetooth.icon}
-          ; )
-        )
+        ;; (box ; Icons
+        ;;   :space-evenly false :spacing 10
+        ;;   :orientation "h"
+        ;;   :class "bar-pad-horiz-moreright"
+        ;;   (box
+        ;;     :valign "center"
+        ;;     :orientation "v"
+        ;;     :space-evenly false :spacing -4
+        ;;     ;; (label :class "icon-material bar-system-icon txt-norm txt"
+        ;;     ;;   :text "keyboard"
+        ;;     ;; )
+        ;;     ;; (label :class "txt-tiny txt" :text {lang_ibus.name_abbr})
+        ;;   )
+        ;;   ;; (label
+        ;;   ;;    :valign "center"
+        ;;   ;;    :class "icon-material bar-system-icon txt-norm"
+        ;;   ;;    :text {WIFI_ICONS[net.level]}
+        ;;   ;; )
+        ;;   ;; (label
+        ;;   ;;   :valign "center"
+        ;;   ;;   :class "icon-material bar-system-icon txt-norm"
+        ;;   ;;   :text {bluetooth.icon}
+        ;;   ;; )
+        ;; )
       )
     )
   )

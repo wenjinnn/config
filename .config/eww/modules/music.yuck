@@ -25,7 +25,7 @@
               :hexpand true
               :xalign 1
               :class "txt-smallie txt"
-              :text {mname.title != '' ? mname.title : 'Musik'}
+              :text {mname.title != '' ? mname.title : 'Music'}
             )
             (label :xalign 0 :class "txt-norm txt"
               :text {mname.artist == '' ? '' : '•'}

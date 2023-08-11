@@ -14,6 +14,9 @@ tags
 nvim/plugin/packer_compiled.lua
 .config/nvim/lazy-lock.json
 .config/eww/tmp
+.config/eww/images/svg/**
+.config/eww/eww_covers/**
+.config/eww/css/**
 .config/mpv/history.log
 .config/mpv/bookmarker.json
 .config/vlc/vlc-qt-interface.conf
