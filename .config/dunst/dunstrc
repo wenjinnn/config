@@ -31,7 +31,7 @@ always_run_script = true
 title = Dunst
 class = Dunst
 corner_radius = 10
-origin = top-right
+origin = top-center
 offset = 8x69
 
 [shortcuts]
