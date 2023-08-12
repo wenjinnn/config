@@ -12,7 +12,7 @@
         (box
           :space-evenly false :spacing 5
           (label :xalign 0 :class "txt-norm txt"
-            :text {formattime(EWW_TIME, '%I:%M')}
+            :text {formattime(EWW_TIME, '%R')}
           )
           (label :xalign 0 :class "txt-norm txt"
             :text "•"
@@ -21,6 +21,24 @@
             :text {formattime(EWW_TIME, '%A, %d/%m')}
           )
         )
+          (box
+            :space-evenly false
+            (label :class "icon-material txt-norm"
+              :valign "center"
+              :text "data_saver_on"
+            )
+            (label :class "txt-norm txt" :text "${round(EWW_CPU.avg, 0)}")
+          )
+          (box
+            :space-evenly false
+            (label :class "icon-material txt-norm"
+              :valign "center"
+              :text "memory"
+            )
+            (box :orientation "v"
+              (label :class "txt-norm txt" :text {round(memory.percentage, 0)})
+            )
+          )
         (box
           :hexpand true :valign "center"
           :space-evenly false :spacing 2

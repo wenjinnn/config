@@ -33,10 +33,10 @@
               ws-window.address != selected ? 'powerview-ws-window' : 'powerview-ws-window-selected'
             )}"
             :style "
-            margin-left: ${round(ws-window.at[0] * OVERVIEW_SCALE, 0)}px;
-            margin-top: ${round(ws-window.at[1] * OVERVIEW_SCALE, 0)}px;
-            margin-right: -${round((ws-window.at[0] + ws-window.size[0]) * OVERVIEW_SCALE,0)}px;
-            margin-bottom: ${round(RES_HEIGHT * OVERVIEW_SCALE - ((ws-window.at[1] + ws-window.size[1]) * OVERVIEW_SCALE), 0)}px;
+            margin-left: ${round(ws-window.at[0] * OVERVIEW_SCALE * 2, 0)}px;
+            margin-top: ${round(ws-window.at[1] * OVERVIEW_SCALE * 2, 0)}px;
+            margin-right: -${round((ws-window.at[0] + ws-window.size[0]) * OVERVIEW_SCALE * 2,0)}px;
+            margin-bottom: ${round(RES_HEIGHT * OVERVIEW_SCALE - ((ws-window.at[1] + ws-window.size[1]) * OVERVIEW_SCALE * 2), 0)}px;
             "
             (eventbox
               :cursor "${ws-window.class == 'workspace' ? '' : 'cell'}"

@@ -9,5 +9,13 @@
       :class "dynamic-module${(osd_vol || osd_bright) ? '-hidebottom' : ''}"
       (workspaces_widget)
     )
+    ;; (box
+    ;;       :class "dynamic-module-hidebottom"
+    ;;     (label
+    ;;     :class "bar-ws-width bar-group-margin"
+    ;;       :limit-width 40
+    ;;       :text "${awin.title}"
+    ;;     )
+    ;; )
   )
 )
