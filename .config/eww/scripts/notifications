@@ -63,6 +63,13 @@ get_icon() {
   fi
 }
 
+get_time(){
+    system_timestamp="$(cut -d'.' -f1 /proc/uptime)"
+    how_long_ago=$((system_timestamp - $1 / 1000000))
+    notification_time="$(date +%R -d "$how_long_ago seconds ago")"
+    echo $notification_time
+}
+
 if [ "$1" == "toggle" ]; then
   toggle
   dunstctl history > "$tmp"
@@ -79,11 +86,17 @@ elif [ "$1" == "icons" ]; then
     is_paused=$(dunstctl is-paused)
     echo '{"toggle_icon": "'"$toggle_icon"'", "paused": '$is_paused', "icon": "'"$(get_icon)"'"}'
   done
+elif [ "$1" == "get_time" ]; then
+    get_time $2
 else
-cd ~/.config/eww
-  dunstctl history > "$tmp"
-  get_ids
-  scripts/notifget
+  # dunstctl history > "$tmp"
+  while true; do
+    dunstctl history
+    eww update notification_revcnt=$(dunstctl count history)
+    sleep 1
+  done
+  # get_ids
+  # scripts/notifget
   # tail -f "$tmp" 2>/dev/null | rg --line-buffered "aa\{sv\}" | while read -r; do
   #   get_ids
   #   scripts/notifget

@@ -99,8 +99,8 @@
   "scripts/music cover"
 )
 (deflisten net :initial `{ "essid": "lo", "icon": "", "level": "0" }` "scripts/net")
-(deflisten notifications :initial '[]' "scripts/notify-receive | gojq -c -M 'reverse'")
-;; (deflisten notifications :initial '[]' "scripts/notifications | gojq -c -M '.data'")
+;; (deflisten notifications :initial '[]' "scripts/notify-receive | gojq -c -M 'reverse'")
+(deflisten notifications :initial '[]' "scripts/notifications | gojq -c -M '.data[]'")
 (deflisten tasks "scripts/taskbarloop")
 (deflisten todolist :initial "[]" "cat json/todo.json | gojq -c -M")
 (deflisten volume :initial `{"icon":"","audio":"1","device":"Headphones","percent":"32","microphone":"100"}` "scripts/volume")
