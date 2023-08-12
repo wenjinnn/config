@@ -53,7 +53,7 @@
                 { "keys": [ "", "+", "N" ], "action": "Toggle right sidebar" },
                 { "keys": [ "", "+", "G" ], "action": "Toggle volume mixer" },
                 { "keys": [ "", "+", "M" ], "action": "Toggle useless audio visualizer" },
-                { "keys": [ "(right)Ctrl" ], "action": "Dismiss notification & close menus" }
+                { "keys": [ "(left)Ctrl" ], "action": "Dismiss notification & close menus" }
             ],
             "appeartick": 2
         },
