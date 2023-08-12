@@ -27,7 +27,7 @@
               :valign "center"
               :text "data_saver_on"
             )
-            (label :class "txt-norm txt" :text "${round(EWW_CPU.avg, 0)}")
+            (label :class "txt-small txt" :text "${round(EWW_CPU.avg, 0)}")
           )
           (box
             :space-evenly false
@@ -36,7 +36,7 @@
               :text "memory"
             )
             (box :orientation "v"
-              (label :class "txt-norm txt" :text {round(memory.percentage, 0)})
+              (label :class "txt-small txt" :text {round(memory.percentage, 0)})
             )
           )
         (box
