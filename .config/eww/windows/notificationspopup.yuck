@@ -66,7 +66,7 @@
           (label
             :halign "center"
             :class "txt-small txt popup-notif-hint"
-            :text "Press right Ctrl or unhover to dismiss"
+            :text "Press left Ctrl or unhover to dismiss"
           )
         )
       )

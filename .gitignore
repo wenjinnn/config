@@ -16,6 +16,11 @@ nvim/plugin/packer_compiled.lua
 .config/eww/tmp
 .config/eww/images/svg/**
 .config/eww/eww_covers/**
+.config/hypr/savedcolors/**
+.config/hypr/shaders/**
+.config/hypr/dirs/**
+.config/hypr/colors.conf
+.config/hypr/colors_default.conf
 .config/eww/css/**
 .config/mpv/history.log
 .config/mpv/bookmarker.json
