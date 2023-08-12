@@ -22,16 +22,15 @@
           )
         )
           (box
-            :space-evenly false
-            (label :class "icon-material txt-norm"
-              :valign "center"
+            :space-evenly false :spacing 5
+            (label :xalign 0 :class "icon-material txt-norm txt"
               :text "data_saver_on"
             )
             (label :class "txt-small txt" :text "${round(EWW_CPU.avg, 0)}")
           )
           (box
-            :space-evenly false
-            (label :class "icon-material txt-norm"
+            :space-evenly false :spacing 5
+            (label :class "icon-material txt-norm txt"
               :valign "center"
               :text "memory"
             )
