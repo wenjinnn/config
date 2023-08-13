@@ -62,7 +62,22 @@ apply_foot() {
     done
 }
 
+apply_dunst() {
+    # Check if $HOME/.config/eww/scripts/templates/dunst/dunstrc exists
+    if [ ! -f "$HOME/.config/eww/scripts/templates/dunst/dunstrc" ]; then
+        echo "Template file not found for Dunst. Skipping that."
+        return
+    fi
+    # Copy template to style.css
+    cp "$HOME/.config/eww/scripts/templates/dunst/dunstrc" "$HOME/.config/dunst/dunstrc"
+    # Apply colors
+    for i in "${!colorlist[@]}"; do
+        sed -i "s/${colorlist[$i]}ff/\#${colorvalues[$i]#\#}ff/g" "$HOME/.config/dunst/dunstrc" # note: ff because theyre opaque
+    done
+}
+
 apply_svgs
 apply_gtklock
 apply_fuzzel
 apply_foot
+apply_dunst

@@ -1,17 +1,16 @@
 [global]
 monitor = 0
 follow = mouse
-geometry = "280x50-20+90"
+width = 275
+height = 500
 indicate_hidden = no
 shrink = no
-separator_height = 4
-separator_color = yes
-padding = 20
-horizontal_padding = 20
-frame_width = 3
+separator_height = 0
+separator_color = no
+frame_width = 0
 sort = no
 idle_threshold = 120
-font = Torus 13
+font = Lexend 12
 line_height = 4
 markup = full
 format = "<b>%s</b>\n%b"
@@ -23,37 +22,38 @@ stack_duplicates = false
 hide_duplicate_count = yes
 show_indicators = no
 icon_position = left
+icon_theme = "TokyoNight-SE,Adwaita"
 max_icon_size = 48
 sticky_history = yes
-history_length = 20
+history_length = 100
+dmenu = "/usr/bin/fuzzel -d dunst"
 browser = x-www-browser -new-tab
 always_run_script = true
 title = Dunst
 class = Dunst
-corner_radius = 10
+corner_radius = 17
 origin = top-center
-offset = 8x69
 
 [shortcuts]
 close = ctrl+shift+space
-close_all = ctrl+shift+space
-history = ctrl+grave
+close_all = ctrl+alt+space
+history = ctrl+shift+grave
 context = ctrl+shift+period
 
 [urgency_low]
 timeout = 4
-background = "#1A1B2699"
-foreground = "#A4D7F1"
-frame_color = "#A4D7F1"
+background = "#514255ff"
+foreground = "#f1dcf3ff"
+frame_color = "#f1dcf3ff"
 
 [urgency_normal]
 timeout = 8
-background = "#1A1B2699"
-foreground = "#A4D7F1"
-frame_color = "#A4D7F1"
+background = "#514255ff"
+foreground = "#f1dcf3ff"
+frame_color = "#f1dcf3ff"
 
 [urgency_critical]
 timeout = 0
-background = "#1A1B2699"
-foreground = "#FDDC74"
-frame_color = "#FDDC74"
+background = "#ffb4a9ff"
+foreground = "#680003ff"
+frame_color = "#680003ff"

@@ -233,22 +233,7 @@
                     :transition "slidedown"
                     :duration "100ms"
                     (box
-                      :class "sidebar-notif-common sidebar-notif${
-                      arraylength(notifications) == 1 ? '' : (
-                        notif.id.data == arraylength(notifications) ? (
-                          notifications[1].appname.data == notif.appname.data ? '-top' : ''
-                          ) : (
-                          notif.id.data == 1 ? (
-                            notifications[arraylength(notifications) - 2].appname.data == notif.appname.data ? '-bottom' : ''
-                            ) : (
-                            notifications[arraylength(notifications) - notif.id.data + 1].appname.data == notif.appname.data ? (
-                              notifications[arraylength(notifications) - notif.id.data - 1].appname.data == notif.appname.data ? '-middle' : '-top') : (
-                              notifications[arraylength(notifications) - notif.id.data - 1].appname.data == notif.appname.data ? '-bottom' : ''
-                            )
-                          )
-                        )
-                      )
-                      } ${notif.urgency == 2 ? 'sidebar-notif-urgent' : 'sidebar-notif-normal'}"
+                      :class "sidebar-notif-common sidebar-notif ${notif.urgency == 2 ? 'sidebar-notif-urgent' : 'sidebar-notif-normal'}"
                       :orientation "h"
                       (box :orientation "v" :space-evenly false
                         (box :orientation "h" :space-evenly false

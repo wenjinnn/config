@@ -4,13 +4,13 @@
             "icon": "pin_drop",
             "name": "Workspaces: navigation",
             "binds": [
-                { "keys": [ "", "+", "#" ], "action": "Go to workspace #" },
-                { "keys": [ "", "+", "S" ], "action": "Toggle special workspace" },
-                { "keys": [ "", "+", "(Scroll ↑↓)" ], "action": "Go to workspace -1/+1" },
-                { "keys": [ "Ctrl", "", "+", "←"], "action": "Go to workspace on the left" },
-                { "keys": [ "Ctrl", "", "+", "→" ], "action": "Go to workspace on the right" },
-                { "keys": [ "", "+", "PageUp" ], "action": "Go to workspace on the left" },
-                { "keys": [ "", "+", "PageDown" ], "action": "Go to workspace on the right" }
+                { "keys": [ "Super", "+", "#" ], "action": "Go to workspace #" },
+                { "keys": [ "Super", "+", "S" ], "action": "Toggle special workspace" },
+                { "keys": [ "Super", "+", "(Scroll ↑↓)" ], "action": "Go to workspace -1/+1" },
+                { "keys": [ "Ctrl", "Super", "+", "←"], "action": "Go to workspace on the left" },
+                { "keys": [ "Ctrl", "Super", "+", "→" ], "action": "Go to workspace on the right" },
+                { "keys": [ "Super", "+", "PageUp" ], "action": "Go to workspace on the left" },
+                { "keys": [ "Super", "+", "PageDown" ], "action": "Go to workspace on the right" }
             ],
             "appeartick": 1
         },
@@ -18,10 +18,10 @@
             "icon": "overview_key",
             "name": "Workspaces: management",
             "binds": [
-                { "keys": [ "", "Alt", "+", "#" ], "action": "Move window to workspace #" },
-                { "keys": [ "", "Alt", "+", "S" ], "action": "Move window to special workspace" },
-                { "keys": [ "", "Alt", "+", "PageUp" ], "action": "Move window to workspace on the left" },
-                { "keys": [ "", "Alt", "+", "PageDown" ], "action": "Move window to workspace on the right" }
+                { "keys": [ "Super", "Alt", "+", "#" ], "action": "Move window to workspace #" },
+                { "keys": [ "Super", "Alt", "+", "S" ], "action": "Move window to special workspace" },
+                { "keys": [ "Super", "Alt", "+", "PageUp" ], "action": "Move window to workspace on the left" },
+                { "keys": [ "Super", "Alt", "+", "PageDown" ], "action": "Move window to workspace on the right" }
             ],
             "appeartick": 1
         },
@@ -29,15 +29,15 @@
             "icon": "move_group",
             "name": "Windows",
             "binds": [
-                { "keys": [ "", "+", "←↑→↓" ], "action": "Focus window in direction" },
-                { "keys": [ "", "Shift", "+", "←↑→↓" ], "action": "Swap window in direction" },
-                { "keys": [ "", "+", ";" ], "action": "Split ratio -" },
-                { "keys": [ "", "+", "'" ], "action": "Split ratio +" },
-                { "keys": [ "", "+", "Lmb" ], "action": "Move window" },
-                { "keys": [ "", "+", "Mmb" ], "action": "Move window" },
-                { "keys": [ "", "+", "Rmb" ], "action": "Resize window" },
-                { "keys": [ "", "+", "F" ], "action": "Fullscreen" },
-                { "keys": [ "", "Alt", "+", "F" ], "action": "Fake fullscreen" }
+                { "keys": [ "Super", "+", "←↑→↓" ], "action": "Focus window in direction" },
+                { "keys": [ "Super", "Shift", "+", "←↑→↓" ], "action": "Swap window in direction" },
+                { "keys": [ "Super", "+", ";" ], "action": "Split ratio -" },
+                { "keys": [ "Super", "+", "'" ], "action": "Split ratio +" },
+                { "keys": [ "Super", "+", "Lmb" ], "action": "Move window" },
+                { "keys": [ "Super", "+", "Mmb" ], "action": "Move window" },
+                { "keys": [ "Super", "+", "Rmb" ], "action": "Resize window" },
+                { "keys": [ "Super", "+", "F" ], "action": "Fullscreen" },
+                { "keys": [ "Super", "Alt", "+", "F" ], "action": "Fake fullscreen" }
             ],
             "appeartick": 1
         }
@@ -47,12 +47,12 @@
             "icon": "widgets",
             "name": "Eww widgets",
             "binds": [
-                { "keys": [ "" ], "action": "Open overview/launcher" },
-                { "keys": [ "Ctrl", "", "+", "R" ], "action": "Kill and restart Eww" },
-                { "keys": [ "", "+", "B" ], "action": "Toggle left sidebar" },
-                { "keys": [ "", "+", "N" ], "action": "Toggle right sidebar" },
-                { "keys": [ "", "+", "G" ], "action": "Toggle volume mixer" },
-                { "keys": [ "", "+", "M" ], "action": "Toggle useless audio visualizer" },
+                { "keys": [ "Ctrl", "Super" ], "action": "Open overview/launcher" },
+                { "keys": [ "Ctrl", "Super", "+", "R" ], "action": "Kill and restart Eww" },
+                { "keys": [ "Super", "+", "B" ], "action": "Toggle left sidebar" },
+                { "keys": [ "Super", "+", "N" ], "action": "Toggle right sidebar" },
+                { "keys": [ "Super", "+", "G" ], "action": "Toggle volume mixer" },
+                { "keys": [ "Super", "+", "M" ], "action": "Toggle useless audio visualizer" },
                 { "keys": [ "(left)Ctrl" ], "action": "Dismiss notification & close menus" }
             ],
             "appeartick": 2
@@ -62,12 +62,12 @@
             "name": "Utilities",
             "binds": [
                 { "keys": [ "PrtSc" ], "action": "Screenshot → Clipboard" },
-                { "keys": [ "", "Shift", "+", "S" ], "action": "Screen snip → Clipboard" },
-                { "keys": [ "", "Shift", "+", "T" ], "action": "Image to text → Clipboard" },
-                { "keys": [ "", "Shift", "+", "C" ], "action": "Color picker" },
-                { "keys": [ "", "Alt", "+", "R" ], "action": "Record region" },
+                { "keys": [ "Super", "Shift", "+", "S" ], "action": "Screen snip → Clipboard" },
+                { "keys": [ "Super", "Shift", "+", "T" ], "action": "Image to text → Clipboard" },
+                { "keys": [ "Super", "Shift", "+", "C" ], "action": "Color picker" },
+                { "keys": [ "Super", "Alt", "+", "R" ], "action": "Record region" },
                 { "keys": [ "Ctrl", "Alt", "+", "R" ], "action": "Record region with sound" },
-                { "keys": [ "", "Shift", "Alt", "+", "R" ], "action": "Record screen with sound" }
+                { "keys": [ "Super", "Shift", "Alt", "+", "R" ], "action": "Record screen with sound" }
             ],
             "appeartick": 2
         },
@@ -91,12 +91,12 @@
             "icon": "apps",
             "name": "Apps",
             "binds": [
-                { "keys": [ "", "+", "T" ], "action": "Launch terminal: foot" },
-                { "keys": [ "", "+", "↵" ], "action": "Launch terminal: WezTerm" },
-                { "keys": [ "", "+", "W" ], "action": "Launch browser: Firefox" },
-                { "keys": [ "", "+", "C" ], "action": "Launch editor: vscode" },
-                { "keys": [ "", "+", "X" ], "action": "Launch editor: GNOME Text Editor" },
-                { "keys": [ "", "+", "I" ], "action": "Launch settings: GNOME Control center" }
+                { "keys": [ "Super", "+", "T" ], "action": "Launch terminal: foot" },
+                { "keys": [ "Super", "+", "↵" ], "action": "Launch terminal: WezTerm" },
+                { "keys": [ "Super", "+", "W" ], "action": "Launch browser: Firefox" },
+                { "keys": [ "Super", "+", "C" ], "action": "Launch editor: vscode" },
+                { "keys": [ "Super", "+", "X" ], "action": "Launch editor: GNOME Text Editor" },
+                { "keys": [ "Super", "+", "I" ], "action": "Launch settings: GNOME Control center" }
             ],
             "appeartick": 3
         },
@@ -104,9 +104,9 @@
             "icon": "keyboard",
             "name": "Typing",
             "binds": [
-                { "keys": [ "", "+", "V" ], "action": "Clipboard" },
-                { "keys": [ "", "+", "." ], "action": "Emoji picker" },
-                { "keys": [ "", "+", "Space" ], "action": "Switch language" }
+                { "keys": [ "Super", "+", "V" ], "action": "Clipboard" },
+                { "keys": [ "Super", "+", "." ], "action": "Emoji picker" },
+                { "keys": [ "Super", "+", "Space" ], "action": "Switch language" }
             ],
             "appeartick": 3
         },
