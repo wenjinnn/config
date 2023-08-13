@@ -11,7 +11,7 @@
         :class "bar-btn-box"
         :space-evenly false :spacing 5
         (label
-          :limit-width 55
+          :limit-width 54
           :class "txt-smaller txt txt-smaller-offset"
           :text "${awin.title != 'null' ? awin.title: ''}"
         )

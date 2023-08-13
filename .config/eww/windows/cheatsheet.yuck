@@ -19,7 +19,7 @@
           (label
             :valign "center"
             :class "cheatsheet-key txt-small"
-            :text ""
+            :text "Super"
           )
           (label
             :valign "center"

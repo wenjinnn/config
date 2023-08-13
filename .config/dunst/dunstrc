@@ -1,7 +1,7 @@
 [global]
 monitor = 0
 follow = mouse
-width = 275
+width = 273
 height = 500
 indicate_hidden = no
 shrink = no
@@ -14,7 +14,7 @@ font = Lexend 12
 line_height = 4
 markup = full
 format = "<b>%s</b>\n%b"
-alignment = left
+alignment = center
 show_age_threshold = 60
 word_wrap = yes
 ignore_newline = no
