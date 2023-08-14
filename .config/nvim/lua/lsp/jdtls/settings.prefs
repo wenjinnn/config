@@ -43,7 +43,7 @@ org.eclipse.jdt.core.formatter.alignment_for_permitted_types_in_type_declaration
 org.eclipse.jdt.core.formatter.alignment_for_record_components=16
 org.eclipse.jdt.core.formatter.alignment_for_relational_operator=0
 org.eclipse.jdt.core.formatter.alignment_for_resources_in_try=80
-org.eclipse.jdt.core.formatter.alignment_for_selector_in_method_invocation=53
+org.eclipse.jdt.core.formatter.alignment_for_selector_in_method_invocation=85
 org.eclipse.jdt.core.formatter.alignment_for_shift_operator=0
 org.eclipse.jdt.core.formatter.alignment_for_string_concatenation=16
 org.eclipse.jdt.core.formatter.alignment_for_superclass_in_type_declaration=16
