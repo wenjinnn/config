@@ -14,6 +14,9 @@ return {
         org_agenda_files = { '~/project/my/archive/org/*' },
         org_default_notes_file = '~/project/my/archive/org/refile.org',
         win_border = 'none',
+        notifications = {
+          enabled = true,
+        }
       })
     end
   },
