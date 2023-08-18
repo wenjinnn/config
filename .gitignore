@@ -9,6 +9,7 @@ glow.tar.gz
 **/*.userdb/
 **/rime/build
 **/__pycache__/
+**/savedcolors/
 *.so
 tags
 nvim/plugin/packer_compiled.lua
@@ -16,7 +17,6 @@ nvim/plugin/packer_compiled.lua
 .config/eww/tmp
 .config/eww/images/svg/**
 .config/eww/eww_covers/**
-.config/hypr/savedcolors/**
 .config/hypr/shaders/**
 .config/hypr/dirs/**
 .config/hypr/colors.conf
