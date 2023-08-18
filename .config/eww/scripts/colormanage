@@ -38,3 +38,5 @@ elif [ $1 == "load" ]; then
 fi
 
 hyprctl reload
+pkill dunst
+dunst &
