@@ -1,7 +1,7 @@
 [global]
 monitor = 0
 follow = mouse
-width = 273
+width = 275
 height = 500
 indicate_hidden = no
 shrink = no
@@ -42,15 +42,15 @@ context = ctrl+shift+period
 
 [urgency_low]
 timeout = 4
-background = "#514255ff"
-foreground = "#f1dcf3ff"
-frame_color = "#f1dcf3ff"
+background = "#384956ff"
+foreground = "#d3e5f6ff"
+frame_color = "#d3e5f6ff"
 
 [urgency_normal]
 timeout = 8
-background = "#514255ff"
-foreground = "#f1dcf3ff"
-frame_color = "#f1dcf3ff"
+background = "#384956ff"
+foreground = "#d3e5f6ff"
+frame_color = "#d3e5f6ff"
 
 [urgency_critical]
 timeout = 0

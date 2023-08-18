@@ -1,5 +1,5 @@
 {
-    "wallpaper": "/home/end/.config/eww/eww_covers/cover_art",
+    "wallpaper": "~/Pictures/eww/cover_art",
     "alpha": "100",
 
     "special": {

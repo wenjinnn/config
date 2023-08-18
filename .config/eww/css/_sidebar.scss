@@ -1,3 +1,7 @@
+.calendar {
+    padding: 1.023rem;
+}
+
 .sidebar-window {
     @include elevation2;
     background-color: $background;
@@ -16,11 +20,11 @@
 }
 
 .sidebar-hide-left {
-    margin-left: -65rem;
+    margin-left: -40rem;
 }
 
 .sidebar-hide-right {
-    margin-right: -70rem;
+    margin-right: -40rem;
 }
 
 .sidebar-section-heading {
@@ -101,6 +105,7 @@
     }
 }
 
+
 .sidebar-calendar-btn {
     @include mainfont;
     font-weight: 500;
@@ -116,7 +121,7 @@
     font-weight: 500;
     min-height: 1.977rem;
     min-width: 1.977rem;
-    margin: 0.205rem;
+    margin: 1.205rem;
 }
 
 .day-1 {

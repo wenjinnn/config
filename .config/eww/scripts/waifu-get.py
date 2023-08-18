@@ -35,6 +35,7 @@ taglist = []
 segs = False
 output = {}
 headers = {}
+home = os.path.expanduser('~')
 
 ###### arguments ######
 for i in range(1, len(sys.argv)): # Add tags
@@ -123,13 +124,13 @@ if response.status_code == 200:
         output['sauce']  = data['images'][0]['source']
 
     os.system('eww update waifu_status=\'Downloading image\'')
-    os.system('wget -O "{0}" "{1}" -q –read-timeout=0.1'.format('eww_covers/waifu_tmp', output['link']))
-    os.system('eww update waifu=\'{"name":"eww_covers/waifu_loading", "size": [0, 100]}\'')
-    os.system('mv ./eww_covers/waifu_tmp ./eww_covers/waifu')
+    os.system('wget -O "{0}" "{1}" -q –read-timeout=0.1'.format(home + '/Pictures/eww/waifu_tmp', output['link']))
+    os.system('eww update waifu=\'{"name":"~/Pictures/eww/waifu_loading", "size": [0, 100]}\'')
+    os.system('mv ~/Pictures/eww/waifu_tmp ~/Pictures/eww/waifu')
 
-    with Image.open('./eww_covers/waifu') as img:
+    with Image.open(home + '/Pictures/eww/waifu') as img:
         output['size'] = img.size
-        output['path'] = 'eww_covers/waifu'
+        output['path'] = home + '/Pictures/eww/waifu'
         output['ext'] = str('.' + img.format.lower())
         print(json.dumps(output))
 

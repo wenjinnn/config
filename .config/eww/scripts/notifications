@@ -25,11 +25,12 @@ get_notif() {
   echo -n '['
 
   for id in "${ids[@]}"; do
-      mapfile -t n < <(gojq -r ".data[] | .[] | select(.id.data == $id) | .appname.data, .summary.data, .body.data" "$tmp" | sed -r '/^\s*$/d' | sed -e 's/\%/ percent/g')
+      mapfile -t n < <(gojq -r ".data[] | .[] | select(.id.data == $id) | .appname.data, .summary.data, .timestamp.data, .body.data" "$tmp" | sed -r '/^\s*$/d' | sed -e 's/\%/ percent/g')
       ohkay=$(sanitize "${n[1]}")
+      time=$(get_time ${n[2]})
       # echo $ohkay
       echo -n ''$([ $id -eq ${ids[0]} ] || echo ,)' { '
-      echo -n '"id": "'"$id"'", "appname": "'"${n[0]}"'", "summary": "'"$ohkay"'", "body": "'"${n[2]}"'"'
+      echo -n '"id": "'"$id"'", "appname": "'"${n[0]}"'", "summary": "'"$ohkay"'", "time": "'"$time"'", "body": "'"${n[3]}"'"'
       echo -n '}' 
   done
 
@@ -89,10 +90,12 @@ elif [ "$1" == "icons" ]; then
 elif [ "$1" == "get_time" ]; then
     get_time $2
 else
-  # dunstctl history > "$tmp"
   while true; do
-    dunstctl history
-    eww update notification_revcnt=$(dunstctl count history)
+    dunstctl history > "$tmp"
+    get_ids
+    get_notif
+    # dunstctl history
+    # eww update notification_revcnt=$(dunstctl count history)
     sleep 1
   done
   # get_ids

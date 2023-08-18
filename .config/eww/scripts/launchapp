@@ -1,7 +1,5 @@
 #!/usr/bin/bash
 
-~/.config/eww/scripts/toggle-powerview.sh --close &
-
 if [[ "$1" == ">"* ]]; then
     args=( $1 )
     if [[ "${args[0]}" == ">music" ]]; then
@@ -30,10 +28,7 @@ if [[ "$1" == ">"* ]]; then
     elif [[ "${args[0]}" == ">uwu" ]]; then
         eww update waifu="$(python3 scripts/waifu-get.py)"
     elif [[ "${args[0]}" == ">r" ]]; then
-        pkill eww && eww daemon && eww open bar && eww open bgdecor
-    elif [[ "${args[0]}" == ">todo" ]]; then
-        scripts/todo add "${1#*>todo }"
-        eww update todolist="$(cat json/todo.json | gojq -c -M)"
+        pkill eww && eww daemon && eww open bar && eww open bgdecor && pkill dunst && dunst &
     elif [[ "${args[0]}" == ">raw" ]]; then
         hyprctl keyword input:force_no_accel $(( 1 - $(hyprctl getoption input:force_no_accel -j | gojq '.int') ))
     else

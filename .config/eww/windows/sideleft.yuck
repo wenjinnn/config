@@ -102,8 +102,6 @@
                 )
                 (box ; Music
                   (eventbox
-                    :onhover "${EWW_CMD} update rev_mixerbtn=true &"
-                    :onhoverlost "${EWW_CMD} update rev_mixerbtn=false &"
                     (box
                       :hexpand true
                       (overlay
@@ -136,24 +134,24 @@
                               :style "color: ${mcover.materialcolor.onPrimaryContainer};"
                               :style {mcover.materialcolor.onPrimaryContainer == "null" ? "" : "color: ${mcover.materialcolor.onPrimaryContainer};"}
                             )
-                            (box
-                              :orientation "h" :space-evenly false :class "spacing-h-5"
-                              :halign "end"
-                              :class "sidebar-music-output txt-small"
-                              :style "
-                              ${mcover.materialcolor.primary == 'null' ? '' : 'background-color: ${mcover.materialcolor.primary};'}
-                              ${mcover.materialcolor.onPrimary == 'null' ? '' : 'color: ${mcover.materialcolor.onPrimary};'}
-                              "
-                              (label
-                                :class "icon-material sidebar-music-device"
-                                :text "${volume.device == 'Headphones' ? '' : ''} "
-                                :style {mcover.materialcolor.onPrimary == "null" ? "" : "color: ${mcover.materialcolor.onPrimary};"}
-                              )
-                              (label
-                                :text "${volume.device}"
-                                :style {mcover.materialcolor.onPrimary == "null" ? "" : "color: ${mcover.materialcolor.onPrimary};"}
-                              )
-                            )
+                            ;; (box
+                            ;;   :orientation "h" :space-evenly false :class "spacing-h-5"
+                            ;;   :halign "end"
+                            ;;   :class "sidebar-music-output txt-small"
+                            ;;   :style "
+                            ;;   ${mcover.materialcolor.primary == 'null' ? '' : 'background-color: ${mcover.materialcolor.primary};'}
+                            ;;   ${mcover.materialcolor.onPrimary == 'null' ? '' : 'color: ${mcover.materialcolor.onPrimary};'}
+                            ;;   "
+                            ;;   (label
+                            ;;     :class "icon-material sidebar-music-device"
+                            ;;     :text "${volume.device == 'Headphones' ? '' : ''} "
+                            ;;     :style {mcover.materialcolor.onPrimary == "null" ? "" : "color: ${mcover.materialcolor.onPrimary};"}
+                            ;;   )
+                            ;;   (label
+                            ;;     :text "${volume.device}"
+                            ;;     :style {mcover.materialcolor.onPrimary == "null" ? "" : "color: ${mcover.materialcolor.onPrimary};"}
+                            ;;   )
+                            ;; )
                             (button ; Open mixer
                               :halign "end"
                               :class "sidebar-music-output txt-small"
@@ -161,7 +159,7 @@
                               ${ANIM_ENTER[0]}
                               ${rev_mixerbtn ? '' : 'margin-right: -10rem;'}
                               "
-                              :onclick "${EWW_CMD} update rev_mixer=${!rev_mixer}"
+                              :onclick "${EWW_CMD} update open_sideleft=false && pavucontrol -t 1 &"
                               (box
                                 :orientation "h" :space-evenly false
                                 :class "spacing-h-5"
@@ -456,101 +454,6 @@
             (box
               :space-evenly false :orientation "v"
               :class "spacing-v-15"
-              (box ; Volume mixer header
-                :class "sidebar-mixer-header spacing-h-10"
-                :space-evenly false
-                (box
-                  (eventbox
-                    :cursor "pointer"
-                    :class "sidebar-mixer-header-btn"
-                    :onclick "${EWW_CMD} update rev_mixer=${!rev_mixer} &"
-                    (box
-                      (label
-                        :class "icon-material txt-hugeass"
-                        :text "arrow_back"
-                      )
-                    )
-                  )
-                )
-                (label :xalign 0
-                  :hexpand true
-                  :class "txt-hugeass"
-                  :text "Volume mixer"
-                )
-                ; Instructions
-                (label :xalign 1
-                  :hexpand true
-                  :class "txt-smaller"
-                  :text "scroll to change volume"
-                )
-              )
-              (scroll ; Volume mixer
-                :hscroll false :vscroll true
-                :vexpand true
-                (box
-                  :valign "start"
-                  :orientation "V"
-                  :space-evenly false :spacing 10
-                  (for app in audiojson
-                    (box
-                      :class "sidebar-mixer-app spacing-h-10"
-                      :space-evenly false :orientation "h"
-                      (image
-                        :class "sidebar-mixer-app-icon"
-                        :valign "start"
-                        :path {app.icon}
-                        :image-width 30
-                        :image-height 30
-                        :tooltip {app.name}
-                      )
-                      (box
-                        :orientation "v"
-                        :hexpand true
-                        :spacing 10
-                        (for client in {app["clients"]}
-                          (eventbox
-                            :onscroll "pactl set-sink-input-volume ${client.serial} $(echo {} | sed -e \"s/up/+5/g\" -e \"s/down/-5/g\")%"
-                            :onrightclick "pactl set-sink-input-volume ${client.serial} 100%"
-                            :onclick "pactl set-sink-input-volume ${client.serial} 0%"
-                            (box
-                              :hexpand true
-                              :space-evenly false
-                              :orientation "h"
-                              :class "sidebar-mixer-app-serial"
-                              (box
-                                :hexpand true
-                                :orientation "v"
-                                ; :space-evenly false
-                                :class "sidebar-mixer-app-num spacing-v-5 txt-norm"
-                                (scroll :hscroll true :vscroll false
-                                  (label
-                                    :xalign 0 :hexpand true
-                                    :wrap true
-                                    :text "${client.title}"
-                                  )
-                                )
-                              )
-                              (box
-                                :style "margin: 0px 10px;"
-                                (circular-progress
-                                  :value {client.volume <= 100 ? client.volume : 100}
-                                  :start-at 75 :thickness 3
-                                  :width 37 :height 37
-                                  :class "sidebar-mixer-app-circle"
-                                  (label
-                                    :class "sidebar-mixer-app-incircle"
-                                    :text "${client.volume}"
-                                  )
-                                )
-                              )
-                            )
-                          )
-                        )
-                      )
-                    )
-                  )
-                )
-              )
             )
           )
         )

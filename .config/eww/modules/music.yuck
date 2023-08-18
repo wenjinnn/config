@@ -62,7 +62,7 @@
           :valign "center"
           :class "bar-music-bottom-cover bar-music-cover"
           :style "
-          background-image: url('${mcover.image == 'null' || mcover.image == '' ? 'eww_covers/cover_art_default' : mcover.image}');
+          background-image: url('${mcover.image == 'null' || mcover.image == '' ? covers + '/cover_art_default' : mcover.image}');
           "
           (box
             :class "bar-music-bottom-ctl-bg bar-music-hide-${!hover_music}"

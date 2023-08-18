@@ -79,5 +79,5 @@ apply_dunst() {
 apply_svgs
 apply_gtklock
 apply_fuzzel
-apply_foot
+# apply_foot
 apply_dunst

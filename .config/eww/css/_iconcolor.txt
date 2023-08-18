@@ -1,28 +1,28 @@
 {
-    "wallpaper": "/home/end/.config/eww/images/wallpaper",
+    "wallpaper": "/home/hewenjin/.config/eww/images/wallpaper",
     "alpha": "100",
 
     "special": {
-        "background": "#070318",
-        "foreground": "#e5e1f2",
-        "cursor": "#e5e1f2"
+        "background": "#101914",
+        "foreground": "#cac4c4",
+        "cursor": "#cac4c4"
     },
     "colors": {
-        "color0": "#070318",
-        "color1": "#B355CF",
-        "color2": "#956CE5",
-        "color3": "#6C9AEA",
-        "color4": "#A39AEF",
-        "color5": "#D5A7EF",
-        "color6": "#AAD0F1",
-        "color7": "#e5e1f2",
-        "color8": "#a09da9",
-        "color9": "#B355CF",
-        "color10": "#956CE5",
-        "color11": "#6C9AEA",
-        "color12": "#A39AEF",
-        "color13": "#D5A7EF",
-        "color14": "#AAD0F1",
-        "color15": "#e5e1f2"
+        "color0": "#101914",
+        "color1": "#0C6DA2",
+        "color2": "#526F9A",
+        "color3": "#8C768A",
+        "color4": "#4289B8",
+        "color5": "#5A9FD5",
+        "color6": "#6DA6D8",
+        "color7": "#cac4c4",
+        "color8": "#8d8989",
+        "color9": "#0C6DA2",
+        "color10": "#526F9A",
+        "color11": "#8C768A",
+        "color12": "#4289B8",
+        "color13": "#5A9FD5",
+        "color14": "#6DA6D8",
+        "color15": "#cac4c4"
     }
 }

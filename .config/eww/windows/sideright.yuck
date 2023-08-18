@@ -240,25 +240,24 @@
                           (label :xalign 0
                             :wrap true
                             :class "txt-norm txt-bold"
-                            :text "${notif.summary.data}"
+                            :text "${notif.summary}"
                           )
                           (box :hexpand true)
                           (label :xalign 0
                             :wrap true
                             :class "txt-small"
-                            ;; :text "${notif.appname.data} • ${formattime(notif.timestamp.data, '%R')}"
-                            :text "${notif.appname.data}"
-                            :text "${arraylength(notifications) == 1 ||
-                            notif.id.data == arraylength(notifications) ||
-                            notifications[arraylength(notifications) - notif.id.data - 1].appname.data != notif.appname.data ?
-                            '${notif.appname.data}' : formattime(notif.timestamp.data, '%R')
-                            }"
+                            :text "${notif.appname} • ${notif.time}"
+                            ;; :text "${arraylength(notifications) == 1 ||
+                            ;; notif.id == arraylength(notifications) ||
+                            ;; notifications[arraylength(notifications) - notif.id - 1].appname != notif.appname || notifications[arraylength(notifications) - notif.id - 1]['urgency'] != notif.urgency ?
+                            ;; '${notif.appname} • ${notif.time}' : notif.time
+                            ;; }"
                           )
                         )
                         (label :xalign 0
                           :wrap true
                           :class "txt-smaller"
-                          :text {notif.body.data}
+                          :text {notif.body}
                         )
                       )
                     )
@@ -290,98 +289,18 @@
             :class "sidebar-section"
             (box
               :space-evenly false :orientation "v"
-              (eventbox
-                :onscroll "scripts/scrollmonth {} &"
-                :onclick "${EWW_CMD} update monthshift=0 &"
-                (box :space-evenly false :orientation "h"
-                  (label :xalign 0
-                    :class "sidebar-section-heading txt-large"
-                    :text {calendartitle}
-                  )
-                  (box :hexpand true)
-                  (label :xalign 0
-                    :class "sidebar-section-heading txt-large"
-                    :text "To-do list"
-                  )
+              (box :space-evenly false :orientation "h"
+                (label :xalign 0
+                  :class "sidebar-section-heading txt-large"
                 )
               )
-              (box ; Calendar
-                :orientation "v"
-                :space-evenly false
-                (box
-                  :class "sidebar-content"
-                  :orientation "h" :space-evenly false :spacing 8
-                  (eventbox
-                    :onscroll "scripts/scrollmonth {} &"
-                    (box
-                      :orientation "v"
-                      :space-evenly false
-                      (box
-                        (for day in weekdays
-                          (box
-                            :class "sidebar-calendar-btn day${day.today}"
-                            (label
-                              :class "sidebar-calendar-txt txt-smallie"
-                              :text "${day.day}"
-                            )
-                          )
-                        )
-                      )
-                      (for week in calendar
-                        (box
-                          (for day in week
-                            (button
-                              :class "sidebar-calendar-btn day${day.today}"
-                              (label
-                                :class "sidebar-calendar-txt txt-smallie"
-                                :text "${day.day}"
-                              )
-                            )
-                          )
-                        )
-                      )
-                    )
-                  )
-                  (box
-                    :class "sidebar-divider"
-                  )
-                  (box
-                    :orientation "v"
-                    :space-evenly false
-                    :hexpand true
-                    :class "sidebar-todo-box"
-                    (scroll
-                      :hscroll false :vscroll true
-                      :vexpand true
-                      (box
-                        :orientation "v"
-                        :space-evenly false
-                        (for task in todolist
-                          (box
-                            :orientation "h"
-                            :space-evenly false
-                            :class "sidebar-todo-item"
-                            (label :xalign 0
-                              :hexpand true
-                              :class "txt-small"
-                              :text {task}
-                              :wrap true
-                            )
-                            (button
-                              :valign "center"
-                              :class "sidebar-todo-btn"
-                              :onclick "scripts/todo del '${task}' && ${EWW_CMD} update todolist=\"$(cat json/todo.json | gojq -c -M)\""
-                              (label
-                                :class "icon-material txt-norm"
-                                :text "Remove"
-                              )
-                            )
-                          )
-                        )
-                      )
-                    )
-                  )
-                )
+              (calendar 
+                :halign "center"
+                :valign "center"
+                :class "calendar"
+                :month current_month
+                :year current_year
+                :day current_day
               )
             )
           )
