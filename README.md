@@ -16,7 +16,7 @@ Also I had optimize this repo size recently by using [git-filter-repo](https://g
 My neovim configuration. since neovim 0.5 version, lot plugins are not compatible with vim, so I completely separated vim and neovim configuration. 
 
 ### .config/hypr
-[hypr](https://github.com/hyprwm/Hyprland) a wayland based compositor
+[hyprland](https://github.com/hyprwm/Hyprland) a wayland based compositor
 
 ### Note that some directory have `readme.md`, That's some special operations and memos I recorded, the `/project/my/config` path in each readme file must be replace with your own path
 
