@@ -50,7 +50,7 @@
             "icon": "widgets",
             "name": "Eww widgets",
             "binds": [
-                { "keys": [ "Ctrl", "Super", "+", "R" ], "action": "Kill and restart Eww Dunst" },
+                { "keys": [ "Ctrl", "Super", "Shift", "Alt", "+", "R" ], "action": "Kill and restart Eww Dunst" },
                 { "keys": [ "Super", "+", "B" ], "action": "Toggle left sidebar" },
                 { "keys": [ "Super", "+", "N" ], "action": "Toggle right sidebar" },
                 { "keys": [ "Esc" ], "action": "close menus" }
