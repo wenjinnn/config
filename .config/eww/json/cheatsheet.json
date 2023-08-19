@@ -5,7 +5,8 @@
             "name": "Workspaces: navigation",
             "binds": [
                 { "keys": [ "Super", "+", "#" ], "action": "Go to workspace #" },
-                { "keys": [ "Super", "+", "S" ], "action": "Toggle special workspace: sysmonitor" },
+                { "keys": [ "Super", "+", "M" ], "action": "Toggle special workspace: monitor" },
+                { "keys": [ "Super", "+", "W" ], "action": "Toggle special workspace: windows" },
                 { "keys": [ "Super", "+", "E" ], "action": "Toggle special workspace: evolution" },
                 { "keys": [ "Super", "+", "C" ], "action": "Toggle special workspace: kdeconnect" },
                 { "keys": [ "Super", "+", "(Scroll ↑↓)" ], "action": "Go to workspace -1/+1" },
@@ -20,8 +21,8 @@
             "icon": "overview_key",
             "name": "Workspaces: management",
             "binds": [
-                { "keys": [ "Super", "Alt", "+", "#" ], "action": "Move window to workspace #" },
-                { "keys": [ "Super", "Alt", "+", "S" ], "action": "Move window to special workspace" },
+                { "keys": [ "Ctrl", "Super", "+", "#" ], "action": "Move window to workspace #" },
+                { "keys": [ "Ctrl", "Super", "+", "S" ], "action": "Move window to special workspace" },
                 { "keys": [ "Super", "Shift", "+", "PageUp" ], "action": "Move window to workspace on the left" },
                 { "keys": [ "Super", "Shift", "+", "PageDown" ], "action": "Move window to workspace on the right" }
             ],
@@ -64,9 +65,9 @@
                 { "keys": [ "Super", "Shift", "+", "PrtSc" ], "action": "Screen snip → Clipboard" },
                 { "keys": [ "Super", "Shift", "+", "T" ], "action": "Image to text → Clipboard" },
                 { "keys": [ "Super", "Shift", "+", "C" ], "action": "Color picker" },
-                { "keys": [ "Super", "Alt", "+", "R" ], "action": "Record region" },
-                { "keys": [ "Ctrl", "Alt", "+", "R" ], "action": "Record region with sound" },
-                { "keys": [ "Super", "Shift", "Alt", "+", "R" ], "action": "Record screen with sound" }
+                { "keys": [ "Super", "Shift", "+", "R" ], "action": "Record region" },
+                { "keys": [ "Ctrl", "Super", "Shift", "+", "R" ], "action": "Record region with sound" },
+                { "keys": [ "Ctrl", "Super", "+", "R" ], "action": "Record screen with sound" }
             ],
             "appeartick": 2
         }
