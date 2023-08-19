@@ -53,7 +53,7 @@
                 { "keys": [ "Ctrl", "Super", "+", "R" ], "action": "Kill and restart Eww Dunst" },
                 { "keys": [ "Super", "+", "B" ], "action": "Toggle left sidebar" },
                 { "keys": [ "Super", "+", "N" ], "action": "Toggle right sidebar" },
-                { "keys": [ "(left)Ctrl" ], "action": "close menus" }
+                { "keys": [ "Esc" ], "action": "close menus" }
             ],
             "appeartick": 2
         },
