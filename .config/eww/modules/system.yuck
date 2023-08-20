@@ -12,7 +12,7 @@
         (box
           :space-evenly false :spacing 5
           (label :xalign 0 :class "txt-norm txt"
-            :text {formattime(EWW_TIME, '%R')}
+            :text {formattime(EWW_TIME, '%T')}
           )
           (label :xalign 0 :class "txt-norm txt"
             :text "•"

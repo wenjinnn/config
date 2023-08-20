@@ -132,7 +132,7 @@
         :class "powermenu-time txt"
         (label :xalign 1
           :class "txt-badonkers"
-          :text {formattime(EWW_TIME, '%I:%M')}
+          :text {formattime(EWW_TIME, '%T')}
         )
         (label :xalign 1
           :class "txt-large"

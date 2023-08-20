@@ -7,16 +7,18 @@
     (box
       :space-evenly false
       (box :class "corner-width")
-      (box
-        :class "bar-btn-box"
-        :space-evenly false :spacing 5
-        (label
-          :limit-width 50
-          :class "txt-smaller txt txt-smaller-offset"
-          :text "${awin.title != 'null' ? awin.title: ''}"
+      (scroll :hscroll true :vscroll false :hexpand true
+        (box
+          :class "bar-btn-box"
+          :space-evenly false :spacing 5
+          (label
+            :class "txt-smaller txt txt-smaller-offset left-width"
+            :text "${awin.title != 'null' ? awin.title: ''}"
+          )
         )
       )
-      (box :hexpand true)
+      (box :class "corner-width")
+      ;; (box :hexpand true)
     )
   )
 )
