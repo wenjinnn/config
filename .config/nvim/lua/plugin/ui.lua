@@ -50,7 +50,7 @@ return {
         sections = {
           lualine_a = { 'mode' },
           lualine_b = { 'branch', 'diff', 'diagnostics' },
-          lualine_c = { 'filename', lsp_status },
+          lualine_c = { { 'filename', path = 4 }, lsp_status },
           lualine_x = { 'encoding', 'fileformat', 'filetype' },
           lualine_y = { 'progress' },
           lualine_z = { 'location' }
@@ -58,7 +58,7 @@ return {
         inactive_sections = {
           lualine_a = {},
           lualine_b = {},
-          lualine_c = { 'filename' },
+          lualine_c = { { 'filename', path = 4 } },
           lualine_x = { 'location' },
           lualine_y = {},
           lualine_z = {}
@@ -69,13 +69,14 @@ return {
               'buffers',
               mode = 2,
               show_filename_only = true,
-              hide_filename_extension = false
+              hide_filename_extension = false,
+              use_mode_colors = true
             }
           },
           lualine_b = {},
           lualine_c = {},
-          lualine_x = { 'windows' },
-          lualine_y = { 'tabs' },
+          lualine_x = { { 'windows', mode = 2, use_mode_colors = true } },
+          lualine_y = { { 'tabs', mode = 2, use_mode_colors = true } },
           lualine_z = {}
         },
         winbar = {},
@@ -98,7 +99,7 @@ return {
         -- whether to map keybinds or not. default true
         default_mappings = true,
         -- which builtin marks to show. default {}
-        builtin_marks = { ".", "<", ">", "^" },
+        builtin_marks = { '.', '<', '>', '^' },
         -- whether movements cycle back to the beginning/end of buffer. default true
         cyclic = true,
         -- whether the shada file is updated after modifying uppercase marks. default false
@@ -221,7 +222,7 @@ return {
     'lukas-reineke/indent-blankline.nvim',
     cond = not vim.g.vscode,
     config = function()
-      require("indent_blankline").setup({
+      require('indent_blankline').setup({
         show_current_context = true,
       })
     end
