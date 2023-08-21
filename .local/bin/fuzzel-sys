@@ -1,0 +1,18 @@
+#!/bin/bash
+cd ~/.config/eww && sed '1,/^### DATA ###$/d' $0 | fuzzel --prompt=">" --dmenu | xargs ~/.config/eww/scripts/launchapp
+exit
+### DATA ###
+>music
+>load
+>save
+>swr
+>light
+>dark
+>multi
+>one
+>wallcolor
+>wall
+>segs
+>uwu
+>r
+>raw

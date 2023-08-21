@@ -22,4 +22,4 @@ swww img "$imgpath" --transition-type random --transition-pos "$cursorposx, $cur
 # Generate colors for eww n stuff
 ln -sf $imgpath $HOME/.config/eww/images/wallpaper
 cd "$HOME/.config/eww" || exit
-./scripts/launchapp '>wall'
+./scripts/launchapp '>wallcolor'

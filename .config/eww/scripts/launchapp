@@ -18,10 +18,10 @@ if [[ "$1" == ">"* ]]; then
         echo -n 'multi' > 'scripts/workdir/__mode_colors.txt'
     elif [[ "${args[0]}" == ">one" ]]; then
         echo -n 'one' > 'scripts/workdir/__mode_colors.txt'
-    elif [[ "${args[0]}" == ">wall" ]]; then
+    elif [[ "${args[0]}" == ">wallcolor" ]]; then
         scripts/colorgen 'images/wallpaper' '[Local wallpaper]' ''
         scripts/colormanage get
-    elif [[ "${args[0]}" == ">img" ]]; then
+    elif [[ "${args[0]}" == ">wall" ]]; then
         scripts/switchwall
     elif [[ "${args[0]}" == ">segs" ]]; then
         eww update waifu="$(python3 scripts/waifu-get.py --segs ero)"
