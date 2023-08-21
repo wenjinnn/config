@@ -170,8 +170,8 @@ nnoremap <silent> <plug>(DapReverseContinue) <cmd>lua require'dap'.reverse_conti
             \ <cmd>call RepeatSet("\<plug>(DapReverseContinue)")<cr>
 nnoremap <silent> <leader>db <cmd>lua require'dap'.toggle_breakpoint()<cr>
 nnoremap <silent> <f9> <cmd>lua require'dap'.toggle_breakpoint()<cr>
-nnoremap <silent> <leader>dl <cmd>exec OpenBreakPoints()<cr>
-nnoremap <silent> <leader>dR <cmd>lua require'dap'.clear_breakpoints()<cr>
+nnoremap <silent> <leader>dq <cmd>exec OpenBreakPoints()<cr>
+nnoremap <silent> <leader>dd <cmd>lua require'dap'.clear_breakpoints()<cr>
 nnoremap <silent> <leader>dc <cmd>lua require'dap'.continue()<cr>
 nnoremap <silent> <f5> <cmd>lua require'dap'.continue()<cr>
 nnoremap <silent> <leader>dC <plug>(DapRunToCursor)
@@ -184,10 +184,10 @@ nnoremap <silent> <leader>dO <plug>(DapStepOut)
 nnoremap <silent> <f12> <plug>(DapStepOut)
 nnoremap <silent> <leader>de <plug>(DapReverseContinue)
 nnoremap <silent> <leader>dB <cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>
-nnoremap <silent> <leader>dL <cmd>lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>
+nnoremap <silent> <leader>dl <cmd>lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>
 nnoremap <silent> <leader>dE <cmd>lua require'dap'.set_exception_breakpoints("default")<cr>
 nnoremap <silent> <leader>dr <cmd>lua require'dap'.repl.toggle()<CR>
-nnoremap <silent> <leader>dp <cmd>lua require'dap'.run_last()<CR>
+nnoremap <silent> <leader>dR <cmd>lua require'dap'.run_last()<CR>
 command DapScopesFloat :lua require'dap.ui.widgets'.cursor_float(require('dap.ui.widgets').scopes, {border = 'none'})<CR>
 command DapFramesFloat :lua require'dap.ui.widgets'.cursor_float(require('dap.ui.widgets').frames, {border = 'none'})<CR>
 command DapExpressionFloat :lua require'dap.ui.widgets'.cursor_float(require('dap.ui.widgets').expression, {border = 'none'})<CR>
@@ -203,6 +203,7 @@ nnoremap <silent> <leader>dh <cmd>lua require'dap.ui.widgets'.hover('<cexpr>', {
 " rest nvim
 nnoremap <leader>re <plug>RestNvim
 nnoremap <leader>rp <plug>RestNvimPreview
+nnoremap <leader>rR <plug>RestNvimLast
 nnoremap <leader>rl <plug>RestNvimLast
 
 function! ToggleQuickFix()
