@@ -45,7 +45,7 @@ return {
           },
           ignore_focus = {},
           always_divide_middle = true,
-          globalstatus = true,
+          globalstatus = false,
           refresh = {
             statusline = 500,
             tabline = 1000,
