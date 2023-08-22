@@ -21,9 +21,14 @@ return {
       local lsp_status = function()
         local lsp_status = require('lsp-status')
         local ok, result = pcall(lsp_status.status)
-        if ok then
-          return result
+        if not ok then
+          return ''
         end
+        local max_length = vim.o.columns / 3
+        if result:len() > max_length then
+          result = result:sub(1, max_length) .. '...'
+        end
+        return result
       end
       require('lualine').setup({
         options = {
