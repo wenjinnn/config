@@ -203,8 +203,7 @@ nnoremap <silent> <leader>dh <cmd>lua require'dap.ui.widgets'.hover('<cexpr>', {
 " rest nvim
 nnoremap <leader>re <plug>RestNvim
 nnoremap <leader>rp <plug>RestNvimPreview
-nnoremap <leader>rR <plug>RestNvimLast
-nnoremap <leader>rl <plug>RestNvimLast
+nnoremap <leader>rr <plug>RestNvimLast
 
 function! ToggleQuickFix()
     if empty(filter(getwininfo(), 'v:val.quickfix'))
