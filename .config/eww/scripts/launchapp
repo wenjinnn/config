@@ -23,6 +23,8 @@ if [[ "$1" == ">"* ]]; then
         scripts/colormanage get
     elif [[ "${args[0]}" == ">wall" ]]; then
         scripts/switchwall
+    elif [[ "${args[0]}" == ">nextwall" ]]; then
+        scripts/nextwall
     elif [[ "${args[0]}" == ">segs" ]]; then
         eww update waifu="$(python3 scripts/waifu-get.py --segs ero)"
     elif [[ "${args[0]}" == ">uwu" ]]; then
