@@ -3,6 +3,7 @@ current=$(swww query | awk '{print $NF}')
 wallpaperpath=$HOME/Pictures/BingWallpaper/
 echo $wallpaperpath
 echo $current
+python $HOME/.config/eww/scripts/bing-get.py
 
 next=$(find "$wallpaperpath" -maxdepth 1 -type f -not -path '*/.*' -newer $current -printf '%T+\t%p\n' | sort -k 1 -M | head -1 | awk '{print $NF}')
 

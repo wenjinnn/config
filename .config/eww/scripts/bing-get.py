@@ -3,8 +3,6 @@ import requests
 import os
 import re
 
-from PIL import Image
-
 bing_url = 'https://www.bing.com'
 bing_img_url = bing_url + '/HPImageArchive.aspx'
 bing_img_params = {
