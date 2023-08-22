@@ -186,8 +186,8 @@ nnoremap <silent> <leader>de <plug>(DapReverseContinue)
 nnoremap <silent> <leader>dB <cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>
 nnoremap <silent> <leader>dl <cmd>lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>
 nnoremap <silent> <leader>dE <cmd>lua require'dap'.set_exception_breakpoints("default")<cr>
-nnoremap <silent> <leader>dr <cmd>lua require'dap'.repl.toggle()<CR>
-nnoremap <silent> <leader>dR <cmd>lua require'dap'.run_last()<CR>
+nnoremap <silent> <leader>dR <cmd>lua require'dap'.repl.toggle()<CR>
+nnoremap <silent> <leader>dr <cmd>lua require'dap'.run_last()<CR>
 command DapScopesFloat :lua require'dap.ui.widgets'.cursor_float(require('dap.ui.widgets').scopes, {border = 'none'})<CR>
 command DapFramesFloat :lua require'dap.ui.widgets'.cursor_float(require('dap.ui.widgets').frames, {border = 'none'})<CR>
 command DapExpressionFloat :lua require'dap.ui.widgets'.cursor_float(require('dap.ui.widgets').expression, {border = 'none'})<CR>
