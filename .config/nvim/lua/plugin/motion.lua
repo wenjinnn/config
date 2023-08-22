@@ -6,6 +6,11 @@ return {
       local opts = {
         label = {
           uppercase = false,
+        },
+        modes = {
+          search = {
+            enabled = false
+          }
         }
       }
       if not vim.g.vscode then
