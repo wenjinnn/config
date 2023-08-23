@@ -24,9 +24,12 @@ return {
         if not ok then
           return ''
         end
-        local max_length = vim.o.columns / 3
+        local max_length = vim.fn.winwidth(0) / 2
+        if vim.fn.winwidth(0) < vim.o.columns then
+          max_length = vim.fn.winwidth(0) / 4
+        end
         if result:len() > max_length then
-          result = result:sub(1, max_length) .. '...'
+          result = result:sub(1, max_length) .. '…'
         end
         return result
       end
