@@ -24,14 +24,6 @@ return {
         if not ok then
           return ''
         end
-        local winwidth = vim.fn.winwidth(0)
-        local max_length = winwidth / 2
-        if winwidth < vim.o.columns then
-          max_length = winwidth / 5
-        end
-        if result:len() > max_length then
-          result = result:sub(1, max_length) .. '…'
-        end
         return result
       end
       require('lualine').setup({

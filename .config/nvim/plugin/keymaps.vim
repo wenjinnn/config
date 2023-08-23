@@ -77,6 +77,7 @@ nnoremap <leader>fp <cmd>Telescope projects<cr>
 nnoremap <leader>fsl <cmd>Telescope session-lens search_session<CR>
 
 " lsp
+nnoremap P <cmd>lua print(require('lsp-status').status())<CR>
 nnoremap K <cmd>lua vim.lsp.buf.hover()<CR>
 nnoremap gD <cmd>lua vim.lsp.buf.declaration()<CR>
 nnoremap gd <cmd>Telescope lsp_definitions<CR>
