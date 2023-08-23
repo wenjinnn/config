@@ -17,7 +17,7 @@ fi
 
 echo Sending "$imgpath" to swww. Cursor pos: ["$cursorposx, $cursorposy_inverted"] &
 # Change swww wallpaper
-swww img "$imgpath" --transition-type random --transition-pos "$cursorposx, $cursorposy_inverted" &
+swww img "$imgpath" --transition-step 1 --transition-fps 60 --transition-type random --transition-pos "$cursorposx, $cursorposy_inverted" &
 
 # Generate colors for eww n stuff
 ln -sf $imgpath $HOME/.config/eww/images/wallpaper

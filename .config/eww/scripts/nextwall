@@ -10,5 +10,5 @@ next=$(find "$wallpaperpath" -maxdepth 1 -type f -not -path '*/.*' -newer $curre
 if [[ -z "$next"  ]]; then
     next=$(find "$wallpaperpath" -maxdepth 1 -type f -not -path '*/.*' -printf '%T+\t%p\n' | sort -k 1 -M | head -1 | awk '{print $NF}')
 fi
-swww img $next --transition-type random --transition-pos "${cursorposx:-0}, ${cursorposy_inverted:-0}"
+swww img $next --transition-step 1 --transition-fps 60 --transition-type random --transition-pos "${cursorposx:-0}, ${cursorposy_inverted:-0}"
 ln -sf $next $HOME/.config/eww/images/wallpaper
