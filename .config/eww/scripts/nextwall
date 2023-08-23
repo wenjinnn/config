@@ -1,5 +1,5 @@
 #!/bin/bash
-current=$(swww query | awk '{print $NF}')
+current=$(swww query | head -1 | awk '{print $NF}' )
 wallpaperpath=$HOME/Pictures/BingWallpaper/
 echo $wallpaperpath
 echo $current
