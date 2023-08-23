@@ -2,6 +2,8 @@
 import requests
 import os
 import re
+from datetime import date
+import glob
 
 bing_url = 'https://www.bing.com'
 bing_img_url = bing_url + '/HPImageArchive.aspx'
@@ -17,8 +19,16 @@ bing_img_headers = {
     'Accept': 'application/json'
 }
 resolution = 'UHD'
+file_type = '.jpg'
 home = os.path.expanduser('~')
 bing_wallpaper_dir = home + '/Pictures/BingWallpaper/'
+
+
+todaystr = date.strftime(date.today(), '%Y%m%d')
+exist_file_re = bing_wallpaper_dir + todaystr + '*' + resolution + file_type
+exist_file = glob.glob(exist_file_re)
+if exist_file:
+    exit(0)
 
 response = requests.get(bing_img_url, params=bing_img_params, headers=bing_img_headers)
 
@@ -28,7 +38,7 @@ if response.status_code == 200:
     latest = images[0]
     startdate = latest['startdate']
     urlbase = latest['urlbase']
-    img_url = bing_url + urlbase + '_' + resolution + '.jpg'
+    img_url = bing_url + urlbase + '_' + resolution + file_type
     file_prefix = re.sub(r'^.*[\\\/]', '', img_url).replace('th?id=OHR.', '')
     file_name = bing_wallpaper_dir + startdate + '-' + file_prefix
 
