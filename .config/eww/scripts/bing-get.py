@@ -27,8 +27,8 @@ todaystr = date.strftime(date.today(), '%Y%m%d')
 exist_file_re = bing_wallpaper_dir + todaystr + '*' + resolution + file_type
 exist_file = glob.glob(exist_file_re)
 if exist_file:
-    print('Bing wallpaper exist, exiting')
-    exit(0)
+    print('Bing wallpaper exist, abort')
+    exit(1)
 
 response = requests.get(bing_img_url, params=bing_img_params, headers=bing_img_headers)
 
@@ -43,11 +43,14 @@ if response.status_code == 200:
     file_name = bing_wallpaper_dir + startdate + '-' + file_prefix
 
     if os.path.exists(file_name):
-        exit(0)
+        print('Today pic exist, abort')
+        exit(1)
     print('Bing wallpaper prepare download form ' + img_url + ' to ' + file_name)
     os.makedirs(bing_wallpaper_dir, exist_ok=True)
     os.system('wget -O "{0}" "{1}" -q –read-timeout=0.1'.format(file_name, img_url))
     print('Download success')
+    exit(0)
 else:
     print('Request failed with status code:', response.status_code)
+    exit(1)
 
