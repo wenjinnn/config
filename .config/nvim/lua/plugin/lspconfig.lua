@@ -180,8 +180,8 @@ return {
     config = function()
       local lint = require('lint')
       lint.linters_by_ft = {}
-      vim.api.nvim_create_autocmd({ 'BufWritePost','BufReadPost','TextChanged' }, {
-        desc = "nvim-lint",
+      vim.api.nvim_create_autocmd({ 'BufWritePost', 'BufReadPost', 'TextChanged', 'InsertLeave' }, {
+        desc = 'nvim-lint',
         callback = function()
           local linters = lint.linters_by_ft[vim.bo.filetype]
           if not linters then
