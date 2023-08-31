@@ -51,11 +51,11 @@ return {
     cond = not vim.g.vscode
   },
   -- remote develop
-  {
-    'miversen33/netman.nvim',
-    cond = not vim.g.vscode,
-    config = function() require('netman') end
-  },
+  -- {
+  --   'miversen33/netman.nvim',
+  --   cond = not vim.g.vscode,
+  --   config = function() require('netman') end
+  -- },
   {
     'uga-rosa/translate.nvim',
     cond = not vim.g.vscode,
