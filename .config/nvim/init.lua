@@ -2,6 +2,7 @@
 vim.g.mapleader = ' '
 
 local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
+local lockpath = os.getenv('LAZY_NVIM_LOCK_PATH')
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
     'git',
@@ -13,11 +14,16 @@ if not vim.loop.fs_stat(lazypath) then
   })
 end
 vim.opt.rtp:prepend(lazypath)
-require('lazy').setup('plugin', {
-  dev = {
-    path = '~/project/my'
-  }
-})
+local lazy_config = {
+  {
+    dev = {
+      path = '~/project/my'
+    }
+}
+if lockpath then
+  lazy_config.lockfile = lockpath .. '/lazy-lock.json'
+end
+require('lazy').setup('plugin', lazy_config)
 
 vim.api.nvim_create_user_command('BufferDelete', function()
   ---@diagnostic disable-next-line: missing-parameter
