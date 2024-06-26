@@ -1,39 +1,30 @@
 local not_vscode = require("util").not_vscode
 return {
   {
-    "Mofiqul/vscode.nvim",
-    cond = not_vscode,
+    "catppuccin/nvim",
+    name = "catppuccin",
     priority = 1000,
     init = function()
-      vim.cmd.colorscheme("vscode")
+      vim.cmd.colorscheme("catppuccin-mocha")
     end,
-    opts = function()
-      local c = require("vscode.colors").get_colors()
-      return {
-        transparent = true,
-        terminal_colors = false,
-        group_overrides = {
-          -- this supports the same val table as vim.api.nvim_set_hl
-          -- use colors from this colorscheme by requiring vscode.colors!
-          TelescopePromptNormal = { link = "Pmenu" },
-          TelescopeResultsNormal = { link = "Pmenu" },
-          TelescopePreviewNormal = { fg = c.vscFront, bg = c.vscBack },
-          TelescopePreviewBorder = { fg = c.vscFront, bg = c.vscBack },
-          TelescopeResultsBorder = { link = "Pmenu" },
-          TelescopePromptBorder = { link = "Pmenu" },
-          TelescopePromptTitle = { link = "lualine_a_insert" },
-          TelescopeResultsTitle = { link = "lualine_a_normal" },
-          TelescopePreviewTitle = { link = "lualine_a_normal" },
-          ["@interface"] = { link = "@constant" },
-          ["@lsp.type.interface"] = { link = "@interface" },
-          ["@org.hyperlink"] = { link = "Underlined" },
-          CmpItemMenu = { link = "Comment" },
-          -- vim-dadbod-ui
-          NotificationInfo = { link = "DiagnosticFloatingInfo" },
-          NotificationError = { link = "DiagnosticFloatingError" },
-          NotificationWarning = { link = "DiagnosticFloatingWarning" },
+    opts = {
+      integrations = {
+        native_lsp = {
+          enabled = true,
+          virtual_text = {
+            errors = { "italic" },
+            hints = { "italic" },
+            warnings = { "italic" },
+            information = { "italic" },
+          },
+          underlines = {
+            errors = { "undercurl" },
+            hints = { "undercurl" },
+            warnings = { "undercurl" },
+            information = { "undercurl" },
+          },
         },
-      }
-    end,
+      },
+    },
   },
 }
