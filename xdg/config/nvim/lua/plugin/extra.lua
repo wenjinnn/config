@@ -16,33 +16,14 @@ return {
     },
     keys = {
       -- Run API request
-      { "<leader>rA", "<cmd>HurlRunner<CR>", desc = "Run All requests" },
-      { "<leader>ra", "<cmd>HurlRunnerAt<CR>", desc = "Run Api request" },
-      { "<leader>re", "<cmd>HurlRunnerToEntry<CR>", desc = "Run Api request to entry" },
-      { "<leader>rt", "<cmd>HurlToggleMode<CR>", desc = "Hurl Toggle Mode" },
-      { "<leader>rv", "<cmd>HurlVerbose<CR>", desc = "Run Api in verbose mode" },
+      { "<leader>rA", "<cmd>HurlRunner<CR>", desc = "Run all requests" },
+      { "<leader>ra", "<cmd>HurlRunnerAt<CR>", desc = "Run api request" },
+      { "<leader>re", "<cmd>HurlRunnerToEntry<CR>", desc = "Run api request to entry" },
+      { "<leader>rt", "<cmd>HurlToggleMode<CR>", desc = "Hurl toggle mode" },
+      { "<leader>rv", "<cmd>HurlVerbose<CR>", desc = "Run api in verbose mode" },
       -- Run Hurl request in visual mode
-      { "<leader>ra", ":HurlRunner<CR>", desc = "Hurl Runner", mode = "v" },
+      { "<leader>ra", ":HurlRunner<CR>", desc = "Hurl runner", mode = "v" },
     },
-  },
-  {
-    "nvim-orgmode/orgmode",
-    cond = not_vscode,
-    event = "BufReadPre",
-    opts = function()
-      local config = {
-        org_agenda_files = { "~/project/my/archive/org/*" },
-        notifications = {
-          enabled = true,
-        },
-      }
-      local default_notes_file = "~/project/my/archive/org/refile.org"
-      default_notes_file = vim.fn.expand(default_notes_file)
-      if vim.fn.filereadable(default_notes_file) == 1 then
-        config.org_default_notes_file = default_notes_file
-      end
-      return config
-    end,
   },
   -- markdown preview
   {
@@ -50,9 +31,11 @@ return {
     cond = not_vscode,
     cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
     keys = {
-      { "<leader>mp", "<cmd>MarkdownPreviewToggle<cr>", desc = "Markdown Preview Toggle" },
+      { "<leader>mp", "<cmd>MarkdownPreviewToggle<cr>", desc = "Markdown preview toggle" },
     },
-    build = "cd app && npm install",
+    build = function()
+      vim.fn["mkdp#util#install"]()
+    end,
     init = function()
       vim.g.mkdp_filetypes = { "markdown" }
       vim.g.mkdp_preview_options = {
@@ -99,7 +82,7 @@ return {
         "n",
         "<Esc><Esc>",
         "<Cmd>call firenvim#focus_page()<CR>",
-        { desc = "Firenvim Focus Page" }
+        { desc = "Firenvim focus page" }
       )
     end,
   },
@@ -124,7 +107,7 @@ return {
             "x",
             "<C-m>",
             "db#op_exec()",
-            { expr = true, desc = "DB Exec Current Query" }
+            { expr = true, desc = "DB exec current query" }
           )
         end,
       })
@@ -133,7 +116,7 @@ return {
       { "tpope/vim-dadbod" },
     },
     keys = {
-      { "<leader><leader>d", "<cmd>DBUIToggle<cr>", desc = "DBUI Toggle" },
+      { "<leader><leader>d", "<cmd>DBUIToggle<cr>", desc = "DBUI toggle" },
     },
     ft = { "sql", "mysql", "plsql" },
     cond = not_vscode,
@@ -145,53 +128,20 @@ return {
     cond = not_vscode,
     keys = {
       {
-        "<leader>fss",
+        "<leader>st",
         '<cmd>lua require("spectre").toggle()<CR>',
-        desc = "Toggle Spectre",
+        desc = "Toggle spectre",
       },
       {
-        "<leader>fsw",
+        "<leader>sv",
         '<cmd>lua require("spectre").open_visual({select_word=true})<CR>',
-        desc = "Spectre Search Current Word",
+        mode = { "n", "v" },
+        desc = "Spectre search current word",
       },
       {
-        "<leader>fsw",
-        '<cmd>lua require("spectre").open_visual({select_word=true})<CR>',
-        mode = "v",
-        desc = "Spectre Search Current Word",
-      },
-      {
-        "<leader>fsf",
+        "<leader>sf",
         '<cmd>lua require("spectre").open_file_search({select_word=true})<CR>',
-        desc = "Search On Current File",
-      },
-    },
-  },
-  -- powerful replace tool
-  {
-    "windwp/nvim-spectre",
-    cond = not_vscode,
-    keys = {
-      {
-        "<leader>fss",
-        '<cmd>lua require("spectre").toggle()<CR>',
-        desc = "Toggle Spectre",
-      },
-      {
-        "<leader>fsw",
-        '<cmd>lua require("spectre").open_visual({select_word=true})<CR>',
-        desc = "Spectre Search Current Word",
-      },
-      {
-        "<leader>fsw",
-        '<cmd>lua require("spectre").open_visual({select_word=true})<CR>',
-        mode = "v",
-        desc = "Spectre Search Current Word",
-      },
-      {
-        "<leader>fsf",
-        '<cmd>lua require("spectre").open_file_search({select_word=true})<CR>',
-        desc = "Search On Current File",
+        desc = "Search on current file",
       },
     },
   },
@@ -284,7 +234,7 @@ return {
   {
     "echasnovski/mini.bufremove",
     keys = {
-      { "<leader>x", "<cmd>lua MiniBufremove.delete()<CR>", desc = "Buf Delete" },
+      { "<leader>x", "<cmd>lua MiniBufremove.delete()<CR>", desc = "Buf delete" },
     },
     version = "*",
     cond = not_vscode,
@@ -310,9 +260,9 @@ return {
         require("mini.sessions").delete(session_name())
       end
       return {
-        { "<leader>sw", write_session, desc = "Session Write" },
-        { "<leader>sW", ":lua MiniSessions.write()", desc = "Session Write Custom" },
-        { "<leader>sd", delete_session, desc = "Session Delete" },
+        { "<leader>sw", write_session, desc = "Session write" },
+        { "<leader>sW", ":lua MiniSessions.write()", desc = "Session write custom" },
+        { "<leader>sd", delete_session, desc = "Session delete" },
       }
     end,
     version = "*",

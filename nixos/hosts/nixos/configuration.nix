@@ -32,7 +32,10 @@
     #./hardware-configuration.nix
   ];
 
-  programs.kdeconnect.enable = true;
+  programs.kdeconnect = {
+    package = pkgs.kdePackages.kdeconnect-kde;
+    enable = true;
+  };
 
   services = {
     printing.enable = true;
@@ -40,6 +43,15 @@
     tlp.settings = {
       INTEL_GPU_MIN_FREQ_ON_AC = 300;
       INTEL_GPU_MIN_FREQ_ON_BAT = 300;
+    };
+  };
+
+  xdg.terminal-exec = {
+    enable = true;
+    settings = {
+      default = [
+        "org.codeberg.dnkl.foot.desktop"
+      ];
     };
   };
 

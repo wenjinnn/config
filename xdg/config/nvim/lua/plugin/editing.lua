@@ -9,7 +9,7 @@ return {
       {
         "<leader>mb",
         "<cmd>ScopeMoveBuf<cr>",
-        desc = "Move Buf To Tab",
+        desc = "Move buf to tab",
       },
     },
   },
@@ -41,13 +41,13 @@ return {
           "<leader>md",
           "<cmd>DiffFormat<cr>",
           mode = { "n" },
-          desc = "Diff Format",
+          desc = "Diff format",
         },
         {
           "<leader>mM",
           toggle_auto_format,
           mode = { "n", "v" },
-          desc = "Auto Format Toggle",
+          desc = "Auto format toggle",
         },
       }
     end,
@@ -111,7 +111,7 @@ return {
       vim.api.nvim_create_autocmd("BufWritePre", {
         pattern = "*",
         callback = diff_format,
-        desc = "Auto Format changed lines",
+        desc = "Auto format changed lines",
       })
     end,
   },
@@ -264,7 +264,7 @@ return {
         "css",
         "scss",
       }, -- one of "all", "maintained" (parsers with maintainers), or a list of languages
-      ignore_install = {}, -- List of parsers to ignore installing
+      ignore_install = { "org" }, -- List of parsers to ignore installing
       auto_install = true,
       highlight = {
         enable = not_vscode, -- false will disable the whole extension

@@ -17,4 +17,13 @@ return {
   },
   { "echasnovski/mini.extra", lazy = true, opts = {} },
   { "MunifTanjim/nui.nvim", lazy = true },
+  {
+    "michaelb/sniprun",
+    build = "sh install.sh",
+    event = "BufRead",
+    keys = {
+      { "<leader>rs", "<Plug>SnipRun", desc = "Run snip", mode = { "n", "v" } },
+      { "<leader>rS", "<Plug>SnipRunOperator", desc = "Run snip operator" },
+    },
+  },
 }

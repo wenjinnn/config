@@ -1,19 +1,24 @@
 local map = vim.keymap.set
-map("n", "[t", "<cmd>tabp<cr>", { silent = true, desc = "Previous Tab" })
-map("n", "]t", "<cmd>tabn<cr>", { silent = true, desc = "Next Tab" })
+map("n", "[t", "<cmd>tabp<cr>", { silent = true, desc = "Previous tab" })
+map("n", "]t", "<cmd>tabn<cr>", { silent = true, desc = "Next tab" })
 map(
   "n",
   "<leader>S",
   "<cmd>windo set scrollbind!<CR>",
-  { silent = true, desc = "Scroll All Buffer" }
+  { silent = true, desc = "Scroll all buffer" }
 )
 map("n", "<leader>X", "<cmd>only<CR>", { silent = true, desc = "Only" })
-map("n", "<leader><leader>X", "<c-^>", { silent = true, desc = "Previous Buffer" })
+map("n", "<leader><leader>X", "<c-^>", { silent = true, desc = "Previous buffer" })
 
 -- Add undo break-points
 map("i", ",", ",<c-g>u")
 map("i", ".", ".<c-g>u")
 map("i", ";", ";<c-g>u")
+
+-- copy/paste to system clipboard
+map("n", "<leader>y", '"+y', { silent = true, desc = "Yank to system clipboard" })
+map("n", "<leader>Y", '"+Y', { silent = true, desc = "Yank line to system clipboard" })
+map("n", "<leader>p", '"+p', { silent = true, desc = "Paste from system clipboard" })
 
 --keywordprg
 map("n", "<leader>K", "<cmd>norm! K<cr>", { desc = "Keywordprg" })
@@ -21,10 +26,12 @@ map("n", "<leader>K", "<cmd>norm! K<cr>", { desc = "Keywordprg" })
 -- lazy
 map("n", "<leader>L", "<cmd>Lazy<cr>", { desc = "Lazy" })
 
-map("n", "<leader>l", "<cmd>lopen<cr>", { desc = "Location List" })
-map("n", "<leader>q", "<cmd>copen<cr>", { desc = "Quickfix List" })
+map("n", "<leader>l", "<cmd>lopen<cr>", { desc = "Location list" })
+map("n", "<leader>q", "<cmd>copen<cr>", { desc = "Quickfix list" })
 
 map("n", "<leader>C", "<cmd>!ctags<cr>", { desc = "Ctags" })
+
+map("n", "<leader>F", "<cmd>lua require'util'.maximize()<cr>", { desc = "Maximize current buffer" })
 
 if vim.g.vscode then
   local action = function(action, opts)

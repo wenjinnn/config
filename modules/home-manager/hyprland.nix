@@ -25,7 +25,6 @@
     playerctl
     pulseaudio
     gnupg
-    libsForQt5.kdeconnect-kde
     blueberry
     cliphist
     glib
@@ -56,6 +55,12 @@
     categories = ["Development"];
     type = "Application";
     genericName = "SQL Integrated Development Environment";
+  };
+
+  services.kdeconnect = {
+    package = pkgs.kdePackages.kdeconnect-kde;
+    enable = true;
+    indicator = true;
   };
 
   systemd.user = {
@@ -137,7 +142,6 @@
           ];
           exec-once = [
             "echo 'Xft.dpi: 192' | xrdb -merge"
-            "kdeconnect-indicator"
             "ags -b hypr"
             "hyprshade auto"
             "fcitx5 -d --replace"
@@ -175,7 +179,6 @@
           general = {
             layout = "dwindle";
             no_focus_fallback = true;
-            no_cursor_warps = true;
             resize_on_border = true;
             "col.active_border" = "rgba(51a4e7ff)";
           };
