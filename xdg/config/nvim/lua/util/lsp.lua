@@ -131,6 +131,48 @@ function M.setup(client, bufnr)
     -- Inside a snippet, use backspace to remove the placeholder.
     keymap("<BS>", "<C-o>s", {}, "s")
   end
+  vim.api.nvim_create_autocmd("CompleteChanged", {
+    buffer = bufnr,
+    callback = function()
+      local info = vim.fn.complete_info({ "selected" })
+      local completionItem = vim.tbl_get(vim.v.completed_item, "user_data", "nvim", "lsp", "completion_item")
+      if nil == completionItem then
+        return
+      end
+
+      local resolvedItem = vim.lsp.buf_request_sync(
+        bufnr,
+        vim.lsp.protocol.Methods.completionItem_resolve,
+        completionItem,
+        500
+      )
+
+      if resolvedItem == nil then
+        return
+      end
+
+      local docs = vim.tbl_get(resolvedItem[client.id], "result", "documentation", "value")
+      if nil == docs then
+        return
+      end
+
+      local winData = vim.api.nvim__complete_set(info["selected"], { info = docs })
+      if not winData.winid or not vim.api.nvim_win_is_valid(winData.winid) then
+        return
+      end
+
+      vim.api.nvim_win_set_config(winData.winid, {})
+      vim.treesitter.start(winData.bufnr, "markdown")
+      vim.wo[winData.winid].conceallevel = 3
+
+      vim.api.nvim_create_autocmd({ "TextChangedI" }, {
+        buffer = bufnr,
+        callback = function()
+          vim.lsp.completion.trigger()
+        end,
+      })
+    end,
+  })
 end
 
 function M.make_capabilities()
