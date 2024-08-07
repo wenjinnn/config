@@ -93,18 +93,9 @@ function M.setup(client, bufnr)
       else
         if next(vim.lsp.get_clients { bufnr = 0 }) then
           vim.lsp.completion.trigger()
-        else
-          if vim.bo.omnifunc == "" then
-            feedkeys "<C-x><C-n>"
-          else
-            feedkeys "<C-x><C-o>"
-          end
         end
       end
     end, "Trigger/select next completion", "i")
-
-    -- Buffer completions.
-    keymap("<C-u>", "<C-x><C-n>", { desc = "Buffer completions" }, "i")
 
     -- Use <Tab> to accept a Copilot suggestion, navigate between snippet tabstops,
     -- or select the next completion.
@@ -135,36 +126,34 @@ function M.setup(client, bufnr)
     buffer = bufnr,
     callback = function()
       local info = vim.fn.complete_info({ "selected" })
-      local completionItem = vim.tbl_get(vim.v.completed_item, "user_data", "nvim", "lsp", "completion_item")
-      if nil == completionItem then
+      local completion_item = vim.tbl_get(vim.v.completed_item, "user_data", "nvim", "lsp", "completion_item")
+      if nil == completion_item then
         return
       end
 
-      local resolvedItem = vim.lsp.buf_request_sync(
+      local resolved_item = vim.lsp.buf_request_sync(
         bufnr,
         vim.lsp.protocol.Methods.completionItem_resolve,
-        completionItem,
+        completion_item,
         500
       )
 
-      if resolvedItem == nil then
+      if resolved_item == nil then
         return
       end
 
-      local docs = vim.tbl_get(resolvedItem[client.id], "result", "documentation", "value")
+      local docs = vim.tbl_get(resolved_item[client.id], "result", "documentation", "value")
       if nil == docs then
         return
       end
 
-      local winData = vim.api.nvim__complete_set(info["selected"], { info = docs })
-      if not winData.winid or not vim.api.nvim_win_is_valid(winData.winid) then
+      local win_data = vim.api.nvim__complete_set(info["selected"], { info = docs })
+      if not win_data.winid or not vim.api.nvim_win_is_valid(win_data.winid) then
         return
       end
 
-      vim.api.nvim_win_set_config(winData.winid, {})
-      vim.treesitter.start(winData.bufnr, "markdown")
-      vim.wo[winData.winid].conceallevel = 3
-
+      vim.treesitter.start(win_data.bufnr, "markdown")
+      vim.wo[win_data.winid].conceallevel = 3
       vim.api.nvim_create_autocmd({ "TextChangedI" }, {
         buffer = bufnr,
         callback = function()
