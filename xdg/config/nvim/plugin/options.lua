@@ -11,8 +11,6 @@ opt.clipboard = vim.env.SSH_TTY and "" or "unnamedplus"
 opt.inccommand = "nosplit"
 opt.cmdheight = 1
 opt.showcmd = true
--- laststatus will set to 2 when lualine.nvim loaded, which at BufReadPre event
-opt.laststatus = 0
 opt.number = true
 opt.signcolumn = "yes"
 opt.relativenumber = true
@@ -75,7 +73,7 @@ opt.confirm = true
 opt.updatetime = 500
 opt.fileencodings:append({ "gbk", "cp936", "gb2312", "gb18030", "big5", "euc-jp", "euc-kr", "prc" })
 opt.termguicolors = true
-opt.completeopt = { "menu", "menuone", "noinsert", "popup" }
+opt.completeopt:append { "menuone", "noinsert" }
 opt.pumheight = 20
 opt.shortmess:append({ I = true })
 opt.sessionoptions:append({ "winpos", "globals", "skiprtp" })
@@ -85,16 +83,7 @@ opt.smoothscroll = true
 
 opt.foldlevel = 99
 opt.foldmethod = "expr"
-opt.foldexpr = "v:lua.require'util'.foldexpr()"
-opt.fillchars = {
-  foldopen = "",
-  foldclose = "",
-  fold = " ",
-  foldsep = " ",
-  diff = "╱",
-  eob = " ",
-}
-
+opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 if vim.g.vscode then
   vim.notify = require("vscode-neovim").notify
 end
