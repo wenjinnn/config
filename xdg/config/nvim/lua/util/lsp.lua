@@ -1,7 +1,11 @@
 local M = {}
-function M.set_buf_keymap(bufnr, mode, lhs, rhs, opts)
-  opts = M.make_opts(opts)
-  vim.api.nvim_buf_set_keymap(bufnr, mode, lhs, rhs, opts)
+
+function M.buf_map(bufnr)
+  return function(lhs, rhs, desc, mode)
+    local final_mode = mode or "n";
+    local opts = M.make_opts({ desc = desc })
+    vim.api.nvim_buf_set_keymap(bufnr, final_mode, lhs, rhs, opts)
+  end
 end
 
 M.opts = { noremap = true, silent = true }
@@ -12,20 +16,18 @@ end
 
 function M.setup(client, bufnr)
   if client.server_capabilities.documentHighlightProvider then
-    vim.api.nvim_create_augroup("lsp_document_highlight", {
-      clear = false,
-    })
+    local lsp_document_highlight = require("util").augroup("lsp_document_highlight", { clear = false })
     vim.api.nvim_clear_autocmds({
       buffer = bufnr,
-      group = "lsp_document_highlight",
+      group = lsp_document_highlight,
     })
     vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
-      group = "lsp_document_highlight",
+      group = lsp_document_highlight,
       buffer = bufnr,
       callback = vim.lsp.buf.document_highlight,
     })
     vim.api.nvim_create_autocmd({ "CursorMoved", "CursorMovedI" }, {
-      group = "lsp_document_highlight",
+      group = lsp_document_highlight,
       buffer = bufnr,
       callback = vim.lsp.buf.clear_references,
     })
@@ -41,6 +43,7 @@ function M.setup(client, bufnr)
       vim.lsp.codelens.refresh({ bufnr = cur_bufnr })
     end
     vim.api.nvim_create_autocmd({ "BufEnter", "InsertLeave" }, {
+      group = require("util").augroup("lsp_codelens"),
       buffer = bufnr,
       callback = function()
         vim.lsp.codelens.refresh({ bufnr = bufnr })

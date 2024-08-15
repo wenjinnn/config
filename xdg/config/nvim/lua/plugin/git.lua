@@ -1,44 +1,15 @@
-local not_vscode = require("util").not_vscode
+local later = MiniDeps.later
+local map = require("util").map
+
 -- git
-return {
-  {
-    "echasnovski/mini.diff",
-    event = "BufRead",
-    cond = not_vscode,
-    opts = {},
-    keys = {
-      {
-        "<leader>go",
-        "<cmd>lua MiniDiff.toggle_overlay()<CR>",
-        desc = "Git toggle overlay",
-      },
-    },
-  },
-  {
-    "echasnovski/mini-git",
-    main = "mini.git",
-    event = "BufRead",
-    cond = not_vscode,
-    opts = {},
-    keys = {
-      {
-        mode = { "n", "x" },
-        "<leader>ga",
-        "<cmd>lua MiniGit.show_at_cursor()<CR>",
-        desc = "Git show at cursor",
-      },
-      {
-        "<leader>gh",
-        "<cmd>lua MiniGit.show_range_history()<CR>",
-        mode = { "n", "v" },
-        desc = "Git show range history",
-      },
-      {
-        "<leader>gd",
-        "<cmd>lua MiniGit.show_diff_source()<CR>",
-        mode = { "n", "v" },
-        desc = "Git show diff source",
-      },
-    },
-  },
-}
+later(function()
+  require("mini.git").setup()
+  map({ "n", "x" }, "<leader>ga", MiniGit.show_at_cursor, "Git show at cursor")
+  map({ "n", "v" }, "<leader>gh", MiniGit.show_range_history, "Git show range history")
+  map({ "n", "v" }, "<leader>gd", MiniGit.show_diff_source, "Git show diff source")
+end)
+
+later(function()
+  require("mini.diff").setup()
+  map("n", "<leader>go", MiniDiff.toggle_overlay, "Git toggle overlay")
+end)

@@ -17,8 +17,8 @@ function M.make_repeatable_keymap(mode, lhs, rhs)
 end
 
 -- test is in vscode
-function M.not_vscode()
-  return not vim.g.vscode
+function M.in_vscode()
+  return vim.g.vscode
 end
 
 M.CREATE_UNDO = vim.api.nvim_replace_termcodes("<c-G>u", true, true, true)
@@ -49,6 +49,25 @@ function M.delete_dap_terminals()
   if #buffers_index > 0 then
     vim.cmd("bd! " .. vim.fn.join(buffers_index, " "))
   end
+end
+
+function M.feedkey(key, mode)
+  vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(key, true, true, true), mode, true)
+end
+
+function M.augroup(name, opts)
+  local final_opts = opts or { clear = true }
+  return vim.api.nvim_create_augroup("wenvim_" .. name, final_opts)
+end
+
+function M.map(mode, lhs, rhs, opts)
+  local final_opts = {}
+  if type(opts) == "string" then
+    final_opts.desc = opts
+  elseif type(opts) == "table" then
+    final_opts = opts
+  end
+  vim.keymap.set(mode, lhs, rhs, final_opts)
 end
 
 return M

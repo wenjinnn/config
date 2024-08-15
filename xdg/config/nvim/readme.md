@@ -9,8 +9,8 @@
 # Screenshots
 | | | | |
 | :--------------: | :--------------: | :--------------: | :--------------: |
-| ![starter](https://github.com/user-attachments/assets/736dae00-311e-44c1-8840-a33fd6fd1b53 "starter") | ![auto completion](https://github.com/user-attachments/assets/e4996800-da09-47bd-85f5-86f44b847ba8 "auto completion") | ![lazy.nvim](https://github.com/user-attachments/assets/a6936d88-b634-4048-98c1-726b8c67c12f "lazy.nvim") | ![key clue](https://github.com/user-attachments/assets/9c73e035-87f4-4be9-b973-639b9690ded3 "key clue") |
-| ![HTTP request](https://github.com/user-attachments/assets/34a03fc4-f8fb-47db-96d0-d0c7f671058f "HTTP request with hurl") | ![pick anything](https://github.com/user-attachments/assets/57d9064a-3630-472d-bf22-28fef9be5619 "pick anything") | ![DAP with toggleterm.nvim integration](https://github.com/user-attachments/assets/7e03ff54-a959-48d7-8e34-1dff6fe295e6 "DAP with toggleterm.nvim integration") | ![file explorer](https://github.com/user-attachments/assets/9f1ae398-21fd-4d70-a3bf-92f5f0b3d69b "file explorer") |
+| ![starter](https://github.com/user-attachments/assets/736dae00-311e-44c1-8840-a33fd6fd1b53 "starter") | ![auto completion](https://github.com/user-attachments/assets/e4996800-da09-47bd-85f5-86f44b847ba8 "auto completion") | ![mini.deps](https://github.com/user-attachments/assets/1db44925-8d78-45de-aa15-50f28338a19a "mini.deps") | ![key clue](https://github.com/user-attachments/assets/9c73e035-87f4-4be9-b973-639b9690ded3 "key clue") |
+| ![HTTP request](https://github.com/user-attachments/assets/34a03fc4-f8fb-47db-96d0-d0c7f671058f "HTTP request with hurl") | ![pick anything](https://github.com/user-attachments/assets/57d9064a-3630-472d-bf22-28fef9be5619 "pick anything") | ![DAP integration](https://github.com/user-attachments/assets/9b773251-ea74-4b8b-9172-35f52e74da98 "DAP integration") | ![file explorer](https://github.com/user-attachments/assets/9f1ae398-21fd-4d70-a3bf-92f5f0b3d69b "file explorer") |
  | ![LSP process and notify](https://github.com/user-attachments/assets/25a624d2-c080-4cda-b45c-3e3af8499563 "LSP process and notify") | ![code action](https://github.com/user-attachments/assets/c3fb3dc8-233c-4f07-9392-c0c3dedc8825 "code action") | ![LSP jump to](https://github.com/user-attachments/assets/cf15f776-ae51-424d-b456-7254392be4dd "LSP jump to") | ![LSP symbol](https://github.com/user-attachments/assets/93bf429d-f9fc-4681-96ac-0cfed750c51d "LSP symbol") |
 
 
@@ -25,6 +25,7 @@
 
 > [!NOTE]
 > This configuration only guaranteed to be compatible with the latest stable version.
+> I'm not using mason.nvim now, The LSP package should managed by you own system.
 
 ## Install Instructions
 
@@ -64,7 +65,7 @@ just some filetype settings
 
 ### Common
 
-`LAZY_NVIM_LOCK_PATH` lazy.nvim lockfile path, if not set, fallback to lazy.nvim default setting
+`NVIM_MINI_DEPS_SNAP` mini.deps snap path, if not set, fallback to mini.deps default setting
 
 `TELESCOPE_FILE_IGNORE_PATTERNS` telescope.nvim file ignore patterns, if not set, the pattern is { "^.git/", "^node_modules/" }
 
@@ -98,6 +99,10 @@ just some filetype settings
 
 `LOMBOK_PATH` path to [lombok](https://projectlombok.org/) java agent jar
 
+`JDTLS_XMX` jdtls xmx jvm arg value
+
+`JDTLS_DAP_VMARGS` jdtls dap vm args
+
 ### Sonarlint
 `SONARLINT_PATH` path to sonarlint language server jars
 
@@ -120,9 +125,6 @@ just some filetype settings
 ### code-runner
 
 + [michaelb/sniprun](https://dotfyle.com/plugins/michaelb/sniprun)
-### color
-
-+ [echasnovski/mini.hipatterns](https://dotfyle.com/plugins/echasnovski/mini.hipatterns)
 ### colorscheme
 
 + [catppuccin/nvim](https://dotfyle.com/plugins/catppuccin/nvim)
@@ -138,83 +140,41 @@ just some filetype settings
 + [theHamsta/nvim-dap-virtual-text](https://dotfyle.com/plugins/theHamsta/nvim-dap-virtual-text)
 ### editing-support
 
-+ [echasnovski/mini.pairs](https://dotfyle.com/plugins/echasnovski/mini.pairs)
-+ [echasnovski/mini.splitjoin](https://dotfyle.com/plugins/echasnovski/mini.splitjoin)
-+ [nvim-treesitter/nvim-treesitter-context](https://dotfyle.com/plugins/nvim-treesitter/nvim-treesitter-context)
-+ [echasnovski/mini.basics](https://dotfyle.com/plugins/echasnovski/mini.basics)
 + [windwp/nvim-ts-autotag](https://dotfyle.com/plugins/windwp/nvim-ts-autotag)
-+ [echasnovski/mini.ai](https://dotfyle.com/plugins/echasnovski/mini.ai)
-### file-explorer
-
-+ [echasnovski/mini.files](https://dotfyle.com/plugins/echasnovski/mini.files)
++ [nvim-treesitter/nvim-treesitter-context](https://dotfyle.com/plugins/nvim-treesitter/nvim-treesitter-context)
 ### formatting
 
-+ [echasnovski/mini.align](https://dotfyle.com/plugins/echasnovski/mini.align)
 + [stevearc/conform.nvim](https://dotfyle.com/plugins/stevearc/conform.nvim)
-### fuzzy-finder
-
-+ [echasnovski/mini.pick](https://dotfyle.com/plugins/echasnovski/mini.pick)
-### git
-
-+ [echasnovski/mini.diff](https://dotfyle.com/plugins/echasnovski/mini.diff)
-+ [echasnovski/mini-git](https://dotfyle.com/plugins/echasnovski/mini-git)
-### indent
-
-+ [echasnovski/mini.indentscope](https://dotfyle.com/plugins/echasnovski/mini.indentscope)
-### keybinding
-
-+ [echasnovski/mini.clue](https://dotfyle.com/plugins/echasnovski/mini.clue)
 ### lsp
 
-+ [neovim/nvim-lspconfig](https://dotfyle.com/plugins/neovim/nvim-lspconfig)
-+ [mfussenegger/nvim-jdtls](https://dotfyle.com/plugins/mfussenegger/nvim-jdtls)
 + [mfussenegger/nvim-lint](https://dotfyle.com/plugins/mfussenegger/nvim-lint)
++ [neovim/nvim-lspconfig](https://dotfyle.com/plugins/neovim/nvim-lspconfig)
 + [b0o/SchemaStore.nvim](https://dotfyle.com/plugins/b0o/SchemaStore.nvim)
++ [mfussenegger/nvim-jdtls](https://dotfyle.com/plugins/mfussenegger/nvim-jdtls)
 ### markdown-and-latex
 
 + [iamcco/markdown-preview.nvim](https://dotfyle.com/plugins/iamcco/markdown-preview.nvim)
-### motion
-
-+ [folke/flash.nvim](https://dotfyle.com/plugins/folke/flash.nvim)
-+ [echasnovski/mini.bracketed](https://dotfyle.com/plugins/echasnovski/mini.bracketed)
 ### note-taking
 
 + [chipsenkbeil/org-roam.nvim](https://dotfyle.com/plugins/chipsenkbeil/org-roam.nvim)
-+ [nvim-orgmode/orgmode](https://dotfyle.com/plugins/nvim-orgmode/orgmode)
 + [jbyuki/venn.nvim](https://dotfyle.com/plugins/jbyuki/venn.nvim)
++ [nvim-orgmode/orgmode](https://dotfyle.com/plugins/nvim-orgmode/orgmode)
 ### nvim-dev
 
-+ [nvim-lua/plenary.nvim](https://dotfyle.com/plugins/nvim-lua/plenary.nvim)
 + [MunifTanjim/nui.nvim](https://dotfyle.com/plugins/MunifTanjim/nui.nvim)
-### plugin-manager
-
-+ [folke/lazy.nvim](https://dotfyle.com/plugins/folke/lazy.nvim)
++ [nvim-lua/plenary.nvim](https://dotfyle.com/plugins/nvim-lua/plenary.nvim)
 ### search
 
-+ [windwp/nvim-spectre](https://dotfyle.com/plugins/windwp/nvim-spectre)
-### session
-
-+ [echasnovski/mini.sessions](https://dotfyle.com/plugins/echasnovski/mini.sessions)
++ [MagicDuck/grug-far.nvim](https://dotfyle.com/plugins/MagicDuck/grug-far.nvim)
 ### snippet
 
 + [rafamadriz/friendly-snippets](https://dotfyle.com/plugins/rafamadriz/friendly-snippets)
-### split-and-window
-
-+ [echasnovski/mini.bufremove](https://dotfyle.com/plugins/echasnovski/mini.bufremove)
-### startup
-
-+ [echasnovski/mini.starter](https://dotfyle.com/plugins/echasnovski/mini.starter)
-### statusline
-
-+ [nvim-lualine/lualine.nvim](https://dotfyle.com/plugins/nvim-lualine/lualine.nvim)
 ### syntax
 
-+ [nvim-treesitter/nvim-treesitter-textobjects](https://dotfyle.com/plugins/nvim-treesitter/nvim-treesitter-textobjects)
-+ [echasnovski/mini.surround](https://dotfyle.com/plugins/echasnovski/mini.surround)
 + [nvim-treesitter/nvim-treesitter](https://dotfyle.com/plugins/nvim-treesitter/nvim-treesitter)
++ [nvim-treesitter/nvim-treesitter-textobjects](https://dotfyle.com/plugins/nvim-treesitter/nvim-treesitter-textobjects)
 ### utility
 
-+ [echasnovski/mini.notify](https://dotfyle.com/plugins/echasnovski/mini.notify)
 + [echasnovski/mini.nvim](https://dotfyle.com/plugins/echasnovski/mini.nvim)
 + [jellydn/hurl.nvim](https://dotfyle.com/plugins/jellydn/hurl.nvim)
 
