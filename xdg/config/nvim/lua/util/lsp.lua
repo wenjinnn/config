@@ -166,6 +166,10 @@ end
 
 function M.make_capabilities()
   local capabilities = vim.lsp.protocol.make_client_capabilities()
+  capabilities.textDocument.completion.completionItem.resolveSupport.properties = {
+    "edit",
+    "documentation",
+  }
   return capabilities
 end
 
