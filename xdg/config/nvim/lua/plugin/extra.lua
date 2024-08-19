@@ -1,14 +1,15 @@
 local in_vscode = require("util").in_vscode
 local map = require("util").map
-local add, later = MiniDeps.add, MiniDeps.later
-
+local add, now, later = MiniDeps.add, MiniDeps.now, MiniDeps.later
 later(function()
+  local build_sniprun = function(args)
+    vim.system({ "sh", "./install.sh", "1" }, { cwd = args.path })
+  end
   add({
     source = "michaelb/sniprun",
     hooks = {
-      post_checkout = function()
-        vim.cmd("sh ./install.sh 1")
-      end,
+      post_install = build_sniprun,
+      post_checkout = build_sniprun,
     },
   })
 
@@ -61,12 +62,14 @@ if not in_vscode() then
 
   -- markdown preview in browser
   later(function()
+    local install_markdown_preview_bin = function()
+      vim.fn["mkdp#util#install"]()
+    end
     add({
       source = "iamcco/markdown-preview.nvim",
       hooks = {
-        post_checkout = function()
-          vim.fn["mkdp#util#install"]()
-        end,
+        post_install = install_markdown_preview_bin,
+        post_checkout = install_markdown_preview_bin,
       },
     })
     vim.g.mkdp_filetypes = { "markdown" }
@@ -87,13 +90,15 @@ if not in_vscode() then
     map("n", "<leader>mp", "<cmd>MarkdownPreviewToggle<cr>", "Markdown preview toggle")
   end)
   -- neovim in browser
-  later(function()
+  now(function()
+    local install_firenvim_bin = function()
+      vim.fn["firenvim#install"](0)
+    end
     add({
       source = "glacambre/firenvim",
       hooks = {
-        post_checkout = function()
-          vim.fn["firenvim#install"](0)
-        end,
+        post_install = install_firenvim_bin,
+        post_checkout = install_firenvim_bin,
       },
     })
     vim.g.firenvim_config = {
@@ -109,7 +114,7 @@ if not in_vscode() then
       },
     }
     if vim.g.started_by_firenvim then
-      map("n", "<C-[>", "<Cmd>call firenvim#focus_page()<CR>", "Firenvim focus page")
+      map("n", "<Esc><Esc>", "<Cmd>call firenvim#focus_page()<CR>", "Firenvim focus page")
     end
   end)
   -- db manage
@@ -173,7 +178,7 @@ if not in_vscode() then
   later(function()
     add({ source = "olimorris/codecompanion.nvim" })
     local adapter = "anthropic"
-    if vim.fn.has("ollama") == 1 then
+    if vim.fn.executable("ollama") == 1 then
       local handle = io.popen("ollama ps")
       if handle then
         for line in handle:lines() do
